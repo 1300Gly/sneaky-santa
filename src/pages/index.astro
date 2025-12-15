@@ -1,8 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import HomePage from '../components/HomePage.svelte';
+
+const title = 'Sneaky Santa – Kerst Dobbelspel & Cadeau-Uitwisselingsspel';
+const description =
+  'Sneaky Santa is een feestelijk kerstdobbelspel voor het hele gezin. Speel drie spannende rondes met dobbelstenen, kaarten en verrassende cadeaus.';
 ---
 
-<MainLayout>
+<MainLayout {title} {description} canonicalPath="/">
   <HomePage client:load />
 </MainLayout>
