@@ -43,9 +43,11 @@
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img 
-          src="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.png" 
+          src="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.webp" 
           alt="Family playing Sneaky Santa game"
           class="w-full h-full object-cover object-center"
+          decoding="async"
+          fetchpriority="high"
         />
         <!-- Dark Overlay for better text readability -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#0a0101]/92 via-[#0a0101]/85 to-[#131e0f]/70"></div>
