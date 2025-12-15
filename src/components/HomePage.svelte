@@ -42,13 +42,19 @@
     <div class="relative min-h-[85vh] sm:min-h-screen">
       <!-- Background Image -->
       <div class="absolute inset-0">
-        <img 
-          src="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.webp" 
-          alt="Family playing Sneaky Santa game"
-          class="w-full h-full object-cover object-center"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <picture>
+          <source
+            srcset="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.webp"
+            type="image/webp"
+          />
+          <img 
+            src="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.png" 
+            alt="Family playing Sneaky Santa game"
+            class="w-full h-full object-cover object-center"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
         <!-- Dark Overlay for better text readability -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#0a0101]/92 via-[#0a0101]/85 to-[#131e0f]/70"></div>
       </div>
