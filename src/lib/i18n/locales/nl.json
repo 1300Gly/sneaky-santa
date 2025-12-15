@@ -1,0 +1,366 @@
+{
+  "common": {
+    "start": "Start",
+    "pause": "Pauzeren",
+    "resume": "Hervatten",
+    "reset": "Resetten",
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "ok": "OK",
+    "next": "Volgende",
+    "back": "Terug",
+    "close": "Sluiten",
+    "save": "Opslaan",
+    "use": "Gebruiken",
+    "continue": "Doorgaan",
+    "home": "Home",
+    "pleaseConfigure": "Configureer het spel op de homepage.",
+    "goToHomepage": "Ga naar Homepage",
+    "minutes": "minuten"
+  },
+  "navigation": {
+    "home": "Home",
+    "rules": "Spelregels",
+    "play": "Spelen"
+  },
+  "game": {
+    "title": "Sneaky Santa",
+    "siteTitle": "Pass the Present - Kerst Dobbelspel",
+    "siteDescription": "Een feestelijk kerstdobbelspel voor het hele gezin!",
+    "footerCopyright": "© 2025 Sneaky Santa - Kerst Dobbelspel | Met 🎄 door Glynairo (Joce K.)",
+    "playGame": "Spel Spelen",
+    "rules": "Spelregels",
+    "setup": "Spel Instellen",
+    "gameComplete": "Spel Voltooid!",
+    "allRoundsFinished": "Alle rondes zijn afgelopen. Bedankt voor het spelen!",
+    "startNewGame": "Nieuw Spel Starten",
+    "skipToNextRound": "Sla Ronde Over",
+    "skipToNextRoundTitle": "Sla Ronde Over?",
+    "skipToNextRoundConfirm": "Weet je zeker dat je naar Ronde {round} wilt gaan? Dit beëindigt de huidige ronde.",
+    "leaveGame": "Verlaat Spel",
+    "leaveGameTitle": "Spel Verlaten?",
+    "leaveGameConfirm": "Weet je zeker dat je het spel wilt verlaten? Je voortgang wordt opgeslagen, maar de timer blijft lopen als deze actief is.",
+    "howToPlay": "Hoe te Spelen",
+    "subtitle": "Een feestelijk kerstdobbelspel voor het hele gezin!",
+    "description": "Pass the Present is een leuk kerstcadeau-uitwisselingsspel gespeeld met dobbelstenen en kaarten. Het spel bestaat uit drie rondes waarin spelers cadeaus uitwisselen, uitpakken en veiligstellen.",
+    "round1Summary": "Ronde 1: Verdeel alle cadeaus vanaf de tafel",
+    "round2Summary": "Ronde 2: Pak cadeaus uit en blijf ruilen",
+    "round3Summary": "Ronde 3: Stel je laatste cadeaus veilig",
+    "heroTitle": "Het Ultieme Kerstcadeau-Uitwisselingsspel",
+    "heroSubtitle": "Breng lachen, opwinding en vriendelijke competitie naar je kerstbijeenkomst met dit interactieve dobbel- en kaartspel.",
+    "heroCatchphrase": "Geen printer of dobbelstenen? Geen probleem, wij hebben je gedekt.",
+    "ctaPrimary": "Begin Nu Met Spelen",
+    "ctaSecondary": "Bekijk Spelregels",
+    "whyPlayTitle": "Waarom je zal houden van dit spel",
+    "whyPlaySubtitle": "Perfect voor familiefeesten, kantoorfeesten en kerstvieringen",
+    "benefit1Title": "🎲 Makkelijk Te Leren",
+    "benefit1Description": "Eenvoudige regels die iedereen binnen enkele minuten kan begrijpen. Gooi gewoon de dobbelsteen en volg de instructies!",
+    "benefit2Title": "👨‍👩‍👧‍👦 Gezinsvriendelijk",
+    "benefit2Description": "Ontworpen voor 4-20 spelers van alle leeftijden. Drie moeilijkheidsmodi zorgen voor plezier voor iedereen, van kinderen tot grootouders.",
+    "benefit3Title": "⏱️ Flexibele Tijdsduur",
+    "benefit3Description": "Pas de rondeduur aan op jouw schema. Speel een snelle 30-minuten game of verleng het voor een volledige avond vol plezier.",
+    "benefit4Title": "🎁 Interactief & Boeiend",
+    "benefit4Description": "Digitale dobbelstenen, timerwaarschuwingen en verrassingskaarten houden iedereen betrokken. Geen saaie cadeau-uitwisselingen meer!",
+    "benefit5Title": "🎄 Feestelijke Sfeer",
+    "benefit5Description": "Prachtig kerstthema-ontwerp met vloeiende animaties en feestelijke kleuren die de kerstsfeer versterken.",
+    "benefit6Title": "📱 Geen Setup Nodig",
+    "benefit6Description": "Alles wat je nodig hebt is digitaal. Geen printen, knippen of voorbereiding. Gewoon openen en spelen!",
+    "quickStartTitle": "Snelle Startgids",
+    "quickStartDescription": "Begin in drie eenvoudige stappen",
+    "step1": "Verzamel 4-20 spelers en ingepakte cadeaus",
+    "step2": "Configureer je spelinstellingen (timer, moeilijkheidsmodus)",
+    "step3": "Gooi de dobbelsteen en laat het plezier beginnen!",
+    "readyToPlay": "Klaar Om Te Spelen?",
+    "readyToPlayDescription": "Begin nu je kerstcadeau-uitwisselingsavontuur"
+  },
+  "rounds": {
+    "round": "Ronde",
+    "round1": {
+      "title": "Ronde 1",
+      "description": "In deze ronde komen alle ingepakte cadeaus op tafel in het spel. De kaarten van Ronde 1 worden als stapel kaarten gebruikt: zodra iemand “pak een speelkaart” moet doen, tik je op de knop ‘Pak een kaart’ om een digitale kaart met instructie te onthullen. Kanskaarten zitten automatisch in het digitale deck, dus je hoeft niets te printen of te schudden. Leg alle cadeaus in het midden, start de ronde en volg de dobbel- en kaartacties. Veel succes!",
+      "diceRules": {
+        "1": "Pak een speelkaart",
+        "2": "Verwissel één van jouw cadeaus met een cadeau van iemand anders",
+        "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+        "4": "Pak een cadeau van iemand af",
+        "5": "Geef een cadeau dat op tafel ligt aan iemand anders",
+        "6": "Pak een cadeau naar keuze van tafel"
+      }
+    },
+    "round2": {
+      "title": "Ronde 2",
+      "description": "In Ronde 2 draait alles meer om het uitpakken van cadeaus. We gebruiken de kaarten van Ronde 2 en eventuele overgebleven speciale acties. Speel verder in dezelfde volgorde als het einde van Ronde 1: gooi de dobbelsteen, tik op ‘Pak een kaart’ als dat op de dobbelsteen staat en volg de digitale tekst om cadeaus te verplaatsen, ruilen of uit te pakken. Veel succes!",
+      "diceRules": {
+        "1": "Pak een speelkaart",
+        "2": "Geef een cadeau van jezelf aan iemand anders. Geen cadeau? Pak een speelkaart!",
+        "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+        "4": "Pak een cadeau van iemand af",
+        "5": "Ruil twee cadeaus van verschillende eigenaars met elkaar",
+        "6": "Pak één van de cadeaus in jouw bezit uit. Geen cadeau? Pak een speelkaart!"
+      }
+    },
+    "round3": {
+      "title": "Ronde 3",
+      "description": "In deze laatste ronde wordt bepaald met de kaarten van Ronde 3 welke cadeaus nog kunnen schuiven en welke veilig worden gesteld. Gebruik dezelfde speelvolgorde, gooi de dobbelsteen en pak kaarten via de app als dat op de dobbelsteen staat. Speel door tot de timer afloopt (of totdat jullie zelf stoppen) en kijk dan met welke cadeaus iedereen naar huis gaat. Veel succes!",
+      "diceRules": {
+        "1": "Pak een speelkaart",
+        "2": "Verwissel twee cadeaus (van verschillende eigenaars)",
+        "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt",
+        "4": "Pak een cadeau van iemand af",
+        "5": "Geef één van jouw cadeaus aan iemand anders. Geen cadeau? Pak een speelkaart!",
+        "6": "Stel één cadeau veilig. Niemand mag het meer afpakken."
+      }
+    },
+    "peaceful": {
+      "round1": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Ruil één van jouw cadeaus met een cadeau van iemand anders",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Bied één van jouw cadeaus aan iemand aan en ruil het met één van hun cadeaus",
+          "5": "Geef een cadeau dat op tafel ligt aan iemand anders",
+          "6": "Pak een cadeau naar keuze van tafel"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Geef een cadeau van jezelf aan iemand anders. Geen cadeau? Pak een speelkaart!",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Vraag iemand om één van hun cadeaus te ruilen met één van jouw cadeaus",
+          "5": "Vraag twee mensen om cadeaus met elkaar te ruilen",
+          "6": "Pak één van de cadeaus in jouw bezit uit. Geen cadeau? Pak een speelkaart!"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Vraag twee mensen om cadeaus met elkaar te ruilen",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt",
+          "4": "Vraag iemand om één van hun cadeaus te ruilen met één van jouw cadeaus",
+          "5": "Geef één van jouw cadeaus aan iemand anders. Geen cadeau? Pak een speelkaart!",
+          "6": "Stel één cadeau veilig. Niemand mag het meer afpakken."
+        }
+      }
+    },
+    "traditional": {
+      "round1": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Verwissel één van jouw cadeaus met een cadeau van iemand anders",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Geef een cadeau dat op tafel ligt aan iemand anders",
+          "6": "Pak een cadeau naar keuze van tafel"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Geef een cadeau van jezelf aan iemand anders. Geen cadeau? Pak een speelkaart!",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Ruil twee cadeaus van verschillende eigenaars met elkaar",
+          "6": "Pak één van de cadeaus in jouw bezit uit. Geen cadeau? Pak een speelkaart!"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Verwissel twee cadeaus (van verschillende eigenaars)",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Geef één van jouw cadeaus aan iemand anders. Geen cadeau? Pak een speelkaart!",
+          "6": "Stel één cadeau veilig. Niemand mag het meer afpakken."
+        }
+      }
+    },
+    "chaos": {
+      "round1": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Verwissel één van jouw cadeaus met een cadeau van iemand anders",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Pak een cadeau van tafel en geef het aan iemand anders, pak dan één van hun cadeaus",
+          "6": "Pak twee cadeaus naar keuze van tafel"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Pak een cadeau van iemand af en geef één van jouw cadeaus aan iemand anders",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Ruil twee cadeaus van verschillende eigenaars, pak dan nog een cadeau van tafel",
+          "6": "Pak één van jouw cadeaus uit, pak dan een cadeau van iemand anders af"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Verwissel twee cadeaus (van verschillende eigenaars), pak dan nog een cadeau van iemand af",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Pak een cadeau van iemand af en geef één van jouw cadeaus aan iemand anders",
+          "6": "Stel één cadeau veilig. Niemand mag het meer afpakken. Pak dan nog een cadeau van iemand af!"
+        }
+      }
+    }
+  },
+  "timer": {
+    "timeRemaining": "Tijd over",
+    "paused": "Gepauzeerd",
+    "halfTime": "Halve tijd voorbij!",
+    "tenMinutes": "10 minuten over!",
+    "fiveMinutes": "5 minuten over!",
+    "oneMinute": "1 minuut over!",
+    "roundOver": "Ronde afgelopen!",
+    "roundOverMessage": "De tijd is om! De ronde is afgelopen.",
+    "roundOverNextRound": "Klaar om Ronde {round} te starten?",
+    "roundOverGameComplete": "Alle rondes zijn voltooid!",
+    "startNextRound": "Start Volgende Ronde",
+    "round1NoTimer": "Gaat door totdat alle cadeaus zijn verdeeld",
+    "resetConfirm": "Weet je zeker dat je de timer wilt resetten?",
+    "resetConfirmMessage": "Weet je zeker dat je de timer wilt resetten? Deze actie kan niet ongedaan worden gemaakt.",
+    "noTimer": "Geen timer"
+  },
+  "cards": {
+    "pickCard": "Pak een kaart",
+    "saveCard": "Bewaar kaart",
+    "useCard": "Gebruik kaart",
+    "claimSaveCard": "Wie claimt deze bewaarkaart?",
+    "enterPlayerName": "Voer speler naam in",
+    "playerName": "Speler naam",
+    "savedCards": "Bewaarde kaarten",
+    "useSavedCard": "Gebruik bewaarde kaart",
+    "nullifyAction": "Kan deze actie annuleren met een bewaarde kaart",
+    "noSavedCards": "Geen bewaarde kaarten",
+    "clickToReveal": "Klik om te onthullen",
+    "gameCard": "Speelkaart",
+    "chanceCard": "Kanskaart",
+    "saveCardLabel": "💾 Bewaarkaart",
+    "pleaseEnterPlayerName": "Voer een speler naam in",
+    "round1": {
+      "card1": "Ruil één van jouw cadeaus met een cadeau van iemand anders",
+      "card2": "Iedereen geeft één cadeau aan de persoon links van hem/haar",
+      "card3": "Iedereen geeft één cadeau aan de persoon rechts van hem/haar",
+      "card4": "Wissel je kleinste cadeau met het allergrootste cadeau van iemand anders",
+      "card5": "Je mag nog een keer dobbelen",
+      "card6": "Je mag nog een keer dobbelen",
+      "card7": "Wissel jouw grootste cadeau met het kleinste cadeau van iemand anders",
+      "card8": "Geef één van jouw cadeaus aan iemand met minder cadeaus dan jij",
+      "card9": "Verwissel van plaats met iemand anders. Alle cadeaus blijven liggen.",
+      "card10": "Kies iemand uit die jou een cadeau moet geven (zij mogen kiezen welk cadeau)",
+      "card11": "Alle cadeaus schuiven één plek naar links",
+      "card12": "Alle cadeaus schuiven één plek naar rechts",
+      "card13": "Iedereen geeft één cadeau door aan de persoon tegenover hem/haar",
+      "card14": "Kies twee mensen uit die al hun cadeaus met elkaar moeten ruilen"
+    },
+    "round2": {
+      "card1": "Verwissel van plaats met de persoon die de meeste cadeaus heeft",
+      "card2": "Pak een cadeau af van iemand die meer dan twee cadeaus heeft",
+      "card3": "Pak alle cadeaus van iemand anders af",
+      "card4": "Geef al jouw cadeaus aan iemand anders (of verdeel ze over de andere spelers)",
+      "card5": "Alle cadeaus schuiven één plaats naar rechts",
+      "card6": "Alle cadeaus schuiven één plaats naar links",
+      "card7": "Geef de dobbelsteen aan iemand anders. Hij of zij is nu aan de beurt. De speelrichting blijft hetzelfde.",
+      "card8": "Je mag nog een keer dobbelen",
+      "card9": "Pak een cadeau dat je zelf hebt gekocht af van iemand anders",
+      "card10": "De speelrichting verandert",
+      "card11": "Pak twee van jouw cadeaus uit",
+      "card12": "Pak een cadeau af van iemand die uitgepakte cadeaus heeft",
+      "card13": "Iedereen pakt één cadeau uit",
+      "card14": "Verwissel een uitgepakt cadeau met iemands ingepakt cadeau",
+      "card15": "Pak alle uitgepakte cadeaus van iemand anders af",
+      "card16": "Verwissel van plaats met iemand die uitgepakte cadeaus heeft",
+      "card17": "Pak een cadeau uit, pak dan nog een cadeau van iemand af",
+      "card18": "Pak het grootste uitgepakte cadeau van iemand af",
+      "card19": "Iedereen geeft één cadeau door naar rechts, jij pakt er dan één uit",
+      "card20": "Pak een cadeau van iemand af, daarna pakt die persoon er één van jou af"
+    },
+    "round3": {
+      "card1": "Je mag een cadeau veiligstellen. Niemand kan deze meer afpakken",
+      "card2": "Je mag een cadeau veiligstellen. Niemand kan deze meer afpakken",
+      "card3": "Je mag een cadeau veiligstellen. Niemand kan deze meer afpakken",
+      "card4": "Je mag een cadeau van iemand anders veiligstellen. Niemand kan deze meer afpakken",
+      "card5": "Iedereen mag één cadeau veiligstellen.",
+      "card6": "Stel twee cadeaus veilig. Niemand kan deze meer afpakken",
+      "card7": "Verwissel een veiliggesteld cadeau met iemands niet-veiliggesteld cadeau",
+      "card8": "Pak een cadeau van iemand af en stel het direct veilig",
+      "card9": "Iedereen stelt één cadeau veilig, jij stelt er daarna nog één extra veilig",
+      "card10": "Dwing iemand om één van hun veiliggestelde cadeaus onveilig te maken",
+      "card11": "Stel een cadeau veilig, pak dan nog een cadeau van iemand af",
+      "card12": "Verwissel van plaats met iemand, stel daarna één cadeau veilig",
+      "card13": "Pak het meest waardevolle cadeau van iemand af en stel het veilig",
+      "card14": "Pak elk cadeau en stel het direct veilig (laatste kans!)",
+      "card15": "Stel een cadeau veilig, daarna stelt iedereen er één veilig",
+      "card16": "Bescherm al jouw cadeaus voor één beurt (ze kunnen niet worden afgepakt)"
+    },
+    "chance": {
+      "save1": "Bewaar deze kaart om een dobbel- of kaartactie van een ander te weigeren.",
+      "save2": "Bewaar deze kaart om een dobbel- of kaartactie van een ander te weigeren.",
+      "save3": "Bewaar deze kaart voor als je minder dan twee cadeaus hebt. Je mag 2 cadeaus van anderen afpakken.",
+      "save4": "Bewaar deze kaart voor als je minder dan twee cadeaus hebt. Je mag 2 cadeaus van anderen afpakken.",
+      "rollAgain1": "Je mag nog een keer dobbelen",
+      "rollAgain2": "Je mag nog een keer dobbelen",
+      "food": "Iemand anders moet iets te drinken en/of eten voor je pakken",
+      "sing": "Wijs iemand aan die een kerstliedje moet zingen"
+    }
+  },
+  "setup": {
+    "setup": "Spel Instellen",
+    "roundTimers": "Ronde timers",
+    "round1Time": "Ronde 1 tijd",
+    "round2Time": "Ronde 2 tijd",
+    "round3Time": "Ronde 3 tijd",
+    "ruleMode": "Spelmodus",
+    "peaceful": "Vredig",
+    "peacefulDescription": "Zachtere kaartacties, meer coöperatieve gameplay",
+    "traditional": "Traditioneel",
+    "traditionalDescription": "Standaard spelregels volgens het originele ontwerp",
+    "chaos": "Chaos",
+    "chaosDescription": "Agressievere kaartacties, meer stelen/ruilen",
+    "digitalDice": "Digitale dobbelsteen",
+    "audio": "Geluid",
+    "startGame": "Start Spel",
+    "startRound": "Start Ronde",
+    "diceRules": "Dobbelregels",
+    "diceRulesRound": "Dobbelregels - Ronde {round}",
+    "rollDice": "Dobbel",
+    "rolling": "Dobbelen...",
+    "digitalDiceDisabled": "Digitale dobbelsteen is uitgeschakeld",
+    "options": "Opties",
+    "status": {
+      "setup": "Instellen",
+      "explanation": "Maak je Klaar",
+      "countdown": "Starten...",
+      "playing": "Spelen",
+      "paused": "Gepauzeerd",
+      "finished": "Voltooid"
+    }
+  },
+  "rules": {
+    "title": "Spelregels",
+    "requirements": {
+      "title": "Benodigdheden",
+      "minMaxParticipants": "Minimaal 4 en maximaal 20 deelnemers",
+      "minGiftsPerParticipant": "Minimaal 2 ingepakte cadeaus per deelnemer",
+      "dice": "Een gewone dobbelsteen (in een bakje of op een bord)",
+      "printedRules": "Gedrukte spelregels",
+      "printedGameCards": "Gedrukt en uitgeknipt: Speelkaarten",
+      "printedChanceCards": "Gedrukt en uitgeknipt: Kanskaarten"
+    },
+    "preparation": {
+      "title": "Voorbereiding",
+      "sitInCircle": "Iedereen zit in een kring rond de tafel",
+      "giftsInMiddle": "De cadeaus liggen in een stapel in het midden",
+      "rollToStart": "Iedereen gooit één keer met de dobbelsteen. De persoon die het hoogste gooit, mag beginnen."
+    },
+    "theGame": {
+      "title": "Het Spel",
+      "description": "Het spel wordt gespeeld in drie rondes. Ronde 1 eindigt wanneer alle cadeaus van de tafel zijn. Spreek een speeltijd af voor Ronde 2 en Ronde 3, bijvoorbeeld 20, 30 of 45 minuten. De timer, kaarten en (optioneel) de digitale dobbelsteen worden allemaal door deze website geregeld, zodat jullie alleen nog maar hoeven te spelen."
+    }
+  }
+}
+

@@ -1,0 +1,366 @@
+{
+  "common": {
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "reset": "Reset",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "ok": "OK",
+    "next": "Next",
+    "back": "Back",
+    "close": "Close",
+    "save": "Save",
+    "use": "Use",
+    "continue": "Continue",
+    "home": "Home",
+    "pleaseConfigure": "Please configure the game on the homepage.",
+    "goToHomepage": "Go to Homepage",
+    "minutes": "minutes"
+  },
+  "navigation": {
+    "home": "Home",
+    "rules": "Rules",
+    "play": "Play"
+  },
+  "game": {
+    "title": "Sneaky Santa",
+    "siteTitle": "Pass the Present - Christmas Dice Game",
+    "siteDescription": "A festive Christmas dice game for the whole family!",
+    "footerCopyright": "© 2025 Sneaky Santa - Christmas Dice Game | With 🎄 by Glynairo (Joce K.)",
+    "playGame": "Play Game",
+    "rules": "Rules",
+    "setup": "Game Setup",
+    "gameComplete": "Game Complete!",
+    "allRoundsFinished": "All rounds are finished. Thank you for playing!",
+    "startNewGame": "Start New Game",
+    "skipToNextRound": "Skip to Next Round",
+    "skipToNextRoundTitle": "Skip to Next Round?",
+    "skipToNextRoundConfirm": "Are you sure you want to skip to Round {round}? This will end the current round.",
+    "leaveGame": "Leave Game",
+    "leaveGameTitle": "Leave Game?",
+    "leaveGameConfirm": "Are you sure you want to leave the game? Your progress will be saved, but the timer will continue running if active.",
+    "howToPlay": "How to Play",
+    "subtitle": "A festive Christmas dice game for the whole family!",
+    "description": "Pass the Present is a fun Christmas gift exchange game played with dice and cards. The game consists of three rounds where players exchange, unwrap, and secure gifts.",
+    "round1Summary": "Round 1: Distribute all gifts from the table",
+    "round2Summary": "Round 2: Unwrap gifts and continue trading",
+    "round3Summary": "Round 3: Secure your final gifts",
+    "heroTitle": "The Ultimate Christmas Gift Exchange Game",
+    "heroSubtitle": "Bring laughter, excitement, and friendly competition to your holiday gathering with this interactive dice and card game.",
+    "heroCatchphrase": "No printer or dice? Say less, we got you covered.",
+    "ctaPrimary": "Start Playing Now",
+    "ctaSecondary": "View Game Rules",
+    "whyPlayTitle": "Why You'll Love This Game",
+    "whyPlaySubtitle": "Perfect for family gatherings, office parties, and holiday celebrations",
+    "benefit1Title": "🎲 Easy to Learn",
+    "benefit1Description": "Simple rules that everyone can understand in minutes. Just roll the dice and follow the instructions!",
+    "benefit2Title": "👨‍👩‍👧‍👦 Family Friendly",
+    "benefit2Description": "Designed for 4-20 players of all ages. Three difficulty modes ensure fun for everyone, from kids to grandparents.",
+    "benefit3Title": "⏱️ Flexible Timing",
+    "benefit3Description": "Customize round durations to fit your schedule. Play a quick 30-minute game or extend it for a full evening of fun.",
+    "benefit4Title": "🎁 Interactive & Engaging",
+    "benefit4Description": "Digital dice, timer warnings, and surprise cards keep everyone engaged. No more boring gift exchanges!",
+    "benefit5Title": "🎄 Festive Atmosphere",
+    "benefit5Description": "Beautiful Christmas-themed design with smooth animations and festive colors that enhance the holiday spirit.",
+    "benefit6Title": "📱 No Setup Required",
+    "benefit6Description": "Everything you need is digital. No printing, cutting, or preparation. Just open and play!",
+    "quickStartTitle": "Quick Start Guide",
+    "quickStartDescription": "Get started in three simple steps",
+    "step1": "Gather 4-20 players and wrapped gifts",
+    "step2": "Configure your game settings (timer, difficulty mode)",
+    "step3": "Roll the dice and let the fun begin!",
+    "readyToPlay": "Ready to Play?",
+    "readyToPlayDescription": "Start your Christmas gift exchange adventure now"
+  },
+  "rounds": {
+    "round": "Round",
+    "round1": {
+      "title": "Round 1",
+      "description": "In this round, all wrapped gifts on the table come into play. Use this app as your deck: whenever someone has to “take a game card”, tap the Pick a card button to reveal a digital card with the instruction. Chance cards are automatically mixed in, so you don’t need to print or shuffle anything yourself. When everyone is ready and gifts are in the middle, start the round and follow the dice and card actions. Good luck!",
+      "diceRules": {
+        "1": "Take a game card",
+        "2": "Swap one of your gifts with someone else's gift",
+        "3": "The game changes direction. The person who was before you is now next.",
+        "4": "Take a gift from someone",
+        "5": "Give a gift from the table to someone else",
+        "6": "Take a gift of your choice from the table"
+      }
+    },
+    "round2": {
+      "title": "Round 2",
+      "description": "In Round 2 the game continues with more focus on unwrapping gifts. The Round 2 cards are being played now combined with the remaining special actions. Keep playing in the same order as you ended Round 1: roll the dice, tap Pick a card when instructed, and follow the digital card text on screen to move, swap or unwrap gifts. Good luck!",
+      "diceRules": {
+        "1": "Take a playing card",
+        "2": "Give a gift from yourself to someone else. No gift? Take a playing card!",
+        "3": "The game changes direction. The person whose turn it was before you is now next.",
+        "4": "Take a gift from someone",
+        "5": "Swap two gifts from different owners with each other",
+        "6": "Unwrap one of the gifts in your possession. No gift? Take a playing card!"
+      }
+    },
+    "round3": {
+      "title": "Round 3",
+      "description": "In this final round, we're using the Round 3 cards to decide which gifts are secured and which can still move. Keep the current turn order, roll the dice, and draw cards when instructed. Play until the timer ends (or until you decide to stop), then see which gifts everyone ends up taking home. May the best Sneaky Santa win!",
+      "diceRules": {
+        "1": "Take a playing card",
+        "2": "Swap two gifts (from different owners)",
+        "3": "The game changes direction. The person who was before you is now back to being next",
+        "4": "Take a gift from someone",
+        "5": "Give one of your gifts to someone else. No gift? Take a playing card!",
+        "6": "Secure one gift. No one may take it anymore."
+      }
+    },
+    "peaceful": {
+      "round1": {
+        "diceRules": {
+          "1": "Take a game card",
+          "2": "Swap one of your gifts with one of someone else's gifts.",
+          "3": "The game changes direction. The person who was before you is now next.",
+          "4": "Offer one of your gifts to someone and swap it with one of their gifts.",
+          "5": "Give a gift from the table to someone else",
+          "6": "Take a gift of your choice from the table"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Give a gift from yourself to someone else. No gift? Take a playing card!",
+          "3": "The game changes direction. The person whose turn it was before you is now next.",
+          "4": "Ask someone to trade one of their gifts for one of yours.",
+          "5": "Ask two people to swap gifts with each other.",
+          "6": "Unwrap one of the gifts in your possession. No gift? Take a playing card!"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Ask two people to swap gifts with each other.",
+          "3": "The game changes direction. The person who was before you is now back to being next",
+          "4": "Ask someone to trade one of their gifts for one of yours.",
+          "5": "Give one of your gifts to someone else. No gift? Take a playing card!",
+          "6": "Secure one gift. No one may take it anymore."
+        }
+      }
+    },
+    "traditional": {
+      "round1": {
+        "diceRules": {
+          "1": "Take a game card",
+          "2": "Swap one of your gifts with someone else's gift",
+          "3": "The game changes direction. The person who was before you is now next.",
+          "4": "Take a gift from someone",
+          "5": "Give a gift from the table to someone else",
+          "6": "Take a gift of your choice from the table"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Give a gift from yourself to someone else. No gift? Take a playing card!",
+          "3": "The game changes direction. The person whose turn it was before you is now next.",
+          "4": "Take a gift from someone",
+          "5": "Swap two gifts from different owners with each other",
+          "6": "Unwrap one of the gifts in your possession. No gift? Take a playing card!"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Swap two gifts (from different owners)",
+          "3": "The game changes direction. The person who was before you is now back to being next",
+          "4": "Take a gift from someone",
+          "5": "Give one of your gifts to someone else. No gift? Take a playing card!",
+          "6": "Secure one gift. No one may take it anymore."
+        }
+      }
+    },
+    "chaos": {
+      "round1": {
+        "diceRules": {
+          "1": "Take a game card",
+          "2": "Swap one of your gifts with someone else's gift.",
+          "3": "The game changes direction. The person who was before you is now next.",
+          "4": "Take a gift from someone.",
+          "5": "Take a gift from the table and give it to someone else, then take one of their gifts",
+          "6": "Take two gifts of your choice from the table"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Take a gift from someone and give one of yours to someone else",
+          "3": "The game changes direction. The person whose turn it was before you is now next.",
+          "4": "Take a gift from someone.",
+          "5": "Swap two gifts from different owners, then take another gift from the table",
+          "6": "Unwrap one of your gifts, then take a gift from someone else"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Swap two gifts (from different owners), then take another gift from someone",
+          "3": "The game changes direction. The person who was before you is now back to being next",
+          "4": "Take a gift from someone.",
+          "5": "Take a gift from someone and give one of yours to someone else",
+          "6": "Secure one gift. No one may take it anymore. Then take another gift from someone!"
+        }
+      }
+    }
+  },
+  "timer": {
+    "timeRemaining": "Time Remaining",
+    "paused": "Paused",
+    "halfTime": "Half time passed!",
+    "tenMinutes": "10 minutes left!",
+    "fiveMinutes": "5 minutes left!",
+    "oneMinute": "1 minute left!",
+    "roundOver": "Round Over!",
+    "roundOverMessage": "Time's up! The round has ended.",
+    "roundOverNextRound": "Ready to start Round {round}?",
+    "roundOverGameComplete": "All rounds are complete!",
+    "startNextRound": "Start Next Round",
+    "round1NoTimer": "Continues until all gifts are distributed",
+    "resetConfirm": "Are you sure you want to reset the timer?",
+    "resetConfirmMessage": "Are you sure you want to reset the timer? This action cannot be undone.",
+    "noTimer": "No timer"
+  },
+  "cards": {
+    "pickCard": "Pick a card",
+    "saveCard": "Save card",
+    "useCard": "Use card",
+    "claimSaveCard": "Who is claiming this save card?",
+    "enterPlayerName": "Enter player name",
+    "playerName": "Player name",
+    "savedCards": "Saved cards",
+    "useSavedCard": "Use saved card",
+    "nullifyAction": "Can cancel this action with a saved card",
+    "noSavedCards": "No saved cards",
+    "clickToReveal": "Click to reveal",
+    "gameCard": "Game Card",
+    "chanceCard": "Chance Card",
+    "saveCardLabel": "💾 Save Card",
+    "pleaseEnterPlayerName": "Please enter a player name",
+    "round1": {
+      "card1": "Swap one of your gifts with a gift from someone else",
+      "card2": "Everyone gives one gift to the person to their left",
+      "card3": "Everyone gives one gift to the person to their right",
+      "card4": "Exchange your smallest gift with the largest gift from someone else",
+      "card5": "You may roll the dice again",
+      "card6": "You may roll the dice again",
+      "card7": "Exchange your largest gift with the smallest gift from someone else",
+      "card8": "Give one of your gifts to someone with fewer gifts than you",
+      "card9": "Swap places with someone else. All gifts stay put.",
+      "card10": "Choose someone who has to give you a gift (they may choose which gift)",
+      "card11": "All gifts move one spot to the left",
+      "card12": "All gifts move one spot to the right",
+      "card13": "Everyone passes one gift to the person across from them",
+      "card14": "Choose two people to swap all their gifts with each other"
+    },
+    "round2": {
+      "card1": "Swap places with the person who has the most gifts",
+      "card2": "Take a gift from someone who has more than two gifts",
+      "card3": "Take all gifts from someone else",
+      "card4": "Give all your gifts to someone else (or distribute them among the other players)",
+      "card5": "All gifts move one place to the right",
+      "card6": "All gifts move one place to the left",
+      "card7": "Give the die to someone else. He or she is now next. The playing direction remains the same.",
+      "card8": "You may roll the die again",
+      "card9": "Take a gift that you bought yourself from someone else",
+      "card10": "The direction of play changes",
+      "card11": "Unwrap two of your gifts",
+      "card12": "Take a gift from someone who has unwrapped gifts",
+      "card13": "Everyone unwraps one gift",
+      "card14": "Swap an unwrapped gift with someone's wrapped gift",
+      "card15": "Take all unwrapped gifts from someone else",
+      "card16": "Trade places with someone who has unwrapped gifts",
+      "card17": "Unwrap a gift, then take another gift from someone",
+      "card18": "Take the largest unwrapped gift from someone",
+      "card19": "Everyone passes one gift to the right, then you unwrap one",
+      "card20": "Take a gift from someone, then they take one from you"
+    },
+    "round3": {
+      "card1": "You may secure a gift. No one can take it away anymore",
+      "card2": "You may secure a gift. No one can take it away anymore",
+      "card3": "You may secure a gift. No one can take it away anymore",
+      "card4": "You may secure a gift from someone else. No one can take it away anymore",
+      "card5": "Everyone may secure one gift.",
+      "card6": "Secure two gifts. No one can take them away anymore",
+      "card7": "Swap a secured gift with someone's unsecured gift",
+      "card8": "Take a gift from someone and immediately secure it",
+      "card9": "Everyone secures one gift, then you secure an extra one",
+      "card10": "Force someone to unsecure one of their secured gifts",
+      "card11": "Secure a gift, then take another gift from someone",
+      "card12": "Trade places with someone, then secure one gift",
+      "card13": "Take the most valuable gift from someone and secure it",
+      "card14": "Take any gift and secure it immediately (last chance!)",
+      "card15": "Secure a gift, then everyone else secures one",
+      "card16": "Protect all your gifts for one turn (they cannot be taken)"
+    },
+    "chance": {
+      "save1": "Save this card to refuse a dice or card action from someone else.",
+      "save2": "Save this card to refuse a dice or card action from someone else.",
+      "save3": "Save this card for when you have less than two gifts. You may take 2 gifts from others.",
+      "save4": "Save this card for when you have less than two gifts. You may take 2 gifts from others.",
+      "rollAgain1": "You may roll the dice again",
+      "rollAgain2": "You may roll the dice again",
+      "food": "Someone else must get something to drink and/or eat for you",
+      "sing": "Point to someone who must sing a Christmas song"
+    }
+  },
+  "setup": {
+    "setup": "Game Setup",
+    "roundTimers": "Round timers",
+    "round1Time": "Round 1 time",
+    "round2Time": "Round 2 time",
+    "round3Time": "Round 3 time",
+    "ruleMode": "Rule mode",
+    "peaceful": "Peaceful",
+    "peacefulDescription": "Gentler card actions, more cooperative gameplay",
+    "traditional": "Traditional",
+    "traditionalDescription": "Standard game rules as per original design",
+    "chaos": "Chaos",
+    "chaosDescription": "More aggressive card actions, increased stealing/swapping",
+    "digitalDice": "Digital dice",
+    "audio": "Audio",
+    "startGame": "Start Game",
+    "startRound": "Start Round",
+    "diceRules": "Dice Rules",
+    "diceRulesRound": "Dice Rules - Round {round}",
+    "rollDice": "Roll Dice",
+    "rolling": "Rolling...",
+    "digitalDiceDisabled": "Digital dice is disabled",
+    "options": "Options",
+    "status": {
+      "setup": "Setup",
+      "explanation": "Get Ready",
+      "countdown": "Starting...",
+      "playing": "Playing",
+      "paused": "Paused",
+      "finished": "Finished"
+    }
+  },
+  "rules": {
+    "title": "Game Rules",
+    "requirements": {
+      "title": "Requirements",
+      "minMaxParticipants": "Minimum 4 and maximum 20 participants",
+      "minGiftsPerParticipant": "Minimum 2 wrapped gifts per participant",
+      "dice": "A regular dice (in a tray or plate)",
+      "printedRules": "Printed game rules",
+      "printedGameCards": "Printed and cut out: Game Cards",
+      "printedChanceCards": "Printed and cut out: Chance Cards"
+    },
+    "preparation": {
+      "title": "Preparation",
+      "sitInCircle": "Everyone sits in a circle around the table",
+      "giftsInMiddle": "The gifts are in a pile in the middle",
+      "rollToStart": "Everyone rolls the dice once. The person who rolls the highest may start."
+    },
+    "theGame": {
+      "title": "The Game",
+      "description": "The game is played in three rounds. Round 1 ends when all gifts are off the table. Agree on a playing time for Round 2 and Round 3, for example 20, 30 or 45 minutes. The timer, cards and (optional) digital dice are all handled by this website, so you can focus on playing."
+    }
+  }
+}
+

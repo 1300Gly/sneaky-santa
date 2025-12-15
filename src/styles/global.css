@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "./animations.css";
+
+:root {
+  /* Christmas color palette from design */
+  --color-forest-dark: #294221; /* Very dark forest green */
+  --color-forest: #385025; /* Muted forest green */
+  --color-burgundy: #891515; /* Deep, rich burgundy red */
+  --color-earth-red: #B42D1A; /* Muted, earthy red with orange undertone */
+  --color-gold: #C6B173; /* Muted gold or khaki */
+  
+  /* Semantic color mappings */
+  --color-primary: var(--color-burgundy);
+  --color-primary-hover: var(--color-earth-red);
+  --color-secondary: var(--color-forest);
+  --color-secondary-hover: var(--color-forest-dark);
+  --color-accent: var(--color-gold);
+  --color-background: #FEFEFE; /* White/Cream */
+  --color-card-bg: #FFFFFF; /* Pure white for cards */
+  --color-text: #1F2937; /* Dark gray */
+  --color-text-light: #6B7280; /* Medium gray */
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Card styling */
+  --card-radius: 0.75rem;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #fff9f2; /* Light beige background */
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-weight: 600;
+}
+
+/* Card base styles */
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
