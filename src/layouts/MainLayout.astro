@@ -2,6 +2,14 @@
 import '../styles/global.css';
 import Header from '../components/Header.svelte';
 import Footer from '../components/Footer.svelte';
+
+const SITE_URL = 'https://sneaky-santa.app';
+
+const {
+  title = 'Sneaky Santa – Kerst Dobbelspel & Cadeau-Uitwisselingsspel',
+  description = 'Sneaky Santa is een feestelijk kerstdobbelspel met dobbelstenen en kaarten voor snelle, vrolijke cadeau-uitwisselingen met familie, vrienden en collega’s.',
+  canonicalPath = '/',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -10,30 +18,31 @@ import Footer from '../components/Footer.svelte';
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Sneaky Santa is een feestelijk kerstdobbelspel met dobbelstenen en kaarten voor snelle, vrolijke cadeau-uitwisselingen met familie, vrienden en collega’s."
+      content={description}
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index,follow" />
     <link rel="icon" type="image/svg+xml" href="/icons/sneaky-santa.svg" />
+    <link rel="canonical" href={`${SITE_URL}${canonicalPath}`} />
     <meta name="generator" content={Astro.generator} />
-    <title>Sneaky Santa – Kerst Dobbelspel & Cadeau-Uitwisselingsspel</title>
+    <title>{title}</title>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sneaky Santa – Kerst Dobbelspel & Cadeau-Uitwisselingsspel" />
+    <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content="Speel Sneaky Santa, het ultieme kerst cadeauspel met dobbelstenen, kaarten en drie spannende rondes vol feestelijke chaos."
+      content={description}
     />
     <meta property="og:image" content="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.webp" />
-    <meta property="og:url" content="https://sneaky-santa.app/" />
+    <meta property="og:url" content={`${SITE_URL}${canonicalPath}`} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sneaky Santa – Kerst Dobbelspel & Cadeau-Uitwisselingsspel" />
+    <meta name="twitter:title" content={title} />
     <meta
       name="twitter:description"
-      content="Breng lachen en spanning naar je kerstfeest met Sneaky Santa, een digitaal kerstdobbelspel met speelkaarten."
+      content={description}
     />
     <meta name="twitter:image" content="/images/5de2a58e-7ab1-407f-ab34-3acd6336ecad.webp" />
 
@@ -44,7 +53,7 @@ import Footer from '../components/Footer.svelte';
         "@type": "WebSite",
         "name": "Sneaky Santa",
         "url": "https://sneaky-santa.app/",
-        "description": "Sneaky Santa is een feestelijk kerstdobbelspel met dobbelstenen en kaarten voor snelle, vrolijke cadeau-uitwisselingen met familie, vrienden en collega’s.",
+        "description": {JSON.stringify(description)},
         "inLanguage": "nl",
         "potentialAction": {
           "@type": "SearchAction",
@@ -54,9 +63,20 @@ import Footer from '../components/Footer.svelte';
       }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+      rel="preload"
+      href="/fonts/poppins-v24-latin/poppins-v24-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/open-sans-v44-latin/open-sans-v44-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body class="min-h-screen flex flex-col">
     <Header client:load />

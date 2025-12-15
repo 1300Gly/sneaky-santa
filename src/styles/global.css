@@ -1,6 +1,39 @@
 @import "tailwindcss";
 @import "./animations.css";
 
+/* Self-hosted fonts */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poppins-v24-latin/poppins-v24-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/poppins-v24-latin/poppins-v24-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/open-sans-v44-latin/open-sans-v44-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/open-sans-v44-latin/open-sans-v44-latin-700.woff2') format('woff2');
+}
+
 :root {
   /* Christmas color palette from design */
   --color-forest-dark: #294221; /* Very dark forest green */
