@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts and temporary files
+Disallow: /dist/
+Disallow: /_astro/
+
+# Sitemap
+Sitemap: https://sneaky-santa.app/sitemap.xml
