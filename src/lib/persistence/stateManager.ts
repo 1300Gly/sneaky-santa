@@ -24,7 +24,6 @@ export function restoreGameState(): boolean {
   const savedState = loadGameState<GameState>();
   
   if (savedState && validateState(savedState)) {
-    console.log('Restoring game state, roundStatus:', savedState.roundStatus);
     gameState.set(savedState);
     
     // Restore timer state separately
@@ -40,7 +39,6 @@ export function restoreGameState(): boolean {
     return true;
   }
   
-  console.log('No valid game state found to restore');
   return false;
 }
 
@@ -64,25 +62,17 @@ export function validateState(state: unknown): state is GameState {
 
 export function persistSettings(): void {
   const currentSettings = get(settings);
-  console.log('persistSettings called with:', currentSettings);
   saveSettings(currentSettings);
-  // Verify it was saved
-  if (typeof window !== 'undefined') {
-    const saved = localStorage.getItem('pass-the-present:settings');
-    console.log('Verified saved to localStorage:', saved);
-  }
 }
 
 export function restoreSettings(): boolean {
   const savedSettings = loadSettings<Settings>();
   
   if (savedSettings) {
-    console.log('Restoring settings from localStorage:', savedSettings);
     settings.set(savedSettings);
     return true;
   }
   
-  console.log('No saved settings found, using defaults');
   return false;
 }
 
@@ -119,7 +109,6 @@ if (typeof window !== 'undefined') {
   settings.subscribe((currentSettings) => {
     // Always persist settings changes, even during initialization
     // The initial restore will set the settings, but we want to persist any user changes
-    console.log('Settings changed, persisting:', currentSettings, 'isInitializing:', isInitializing);
     // Use a small delay to ensure the store has fully updated
     setTimeout(() => {
       persistSettings();
@@ -129,7 +118,6 @@ if (typeof window !== 'undefined') {
   // Mark initialization complete after a small delay
   setTimeout(() => {
     isInitializing = false;
-    console.log('Initialization complete, settings persistence enabled');
   }, 200);
   
   // Don't automatically reset to setup - let the game page handle it

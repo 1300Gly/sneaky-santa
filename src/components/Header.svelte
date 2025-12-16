@@ -102,7 +102,6 @@
           currentCard: undefined,
         });
         timer.resetTimer();
-        console.log('Game state cleared, redirecting');
       }
       
       showLeaveGameModal = false;

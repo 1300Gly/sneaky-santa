@@ -54,7 +54,6 @@ export function loadGameState<T>(): T | null {
   // Handle state migrations if version changes
   if (version !== null && version !== CURRENT_STATE_VERSION) {
     // Future: implement migration logic here
-    console.warn(`State version mismatch: ${version} vs ${CURRENT_STATE_VERSION}`);
   }
   
   return loadState<T>(STATE_KEY);

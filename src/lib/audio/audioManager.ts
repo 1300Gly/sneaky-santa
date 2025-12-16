@@ -22,14 +22,10 @@ class AudioManager {
   private loadSound(name: string, path: string): void {
     if (typeof window === 'undefined') return;
     
-    try {
-      const audio = new Audio(path);
-      audio.preload = 'auto';
-      audio.volume = 0.5;
-      this.sounds.set(name, audio);
-    } catch (error) {
-      console.warn(`Failed to load audio: ${path}`, error);
-    }
+    const audio = new Audio(path);
+    audio.preload = 'auto';
+    audio.volume = 0.5;
+    this.sounds.set(name, audio);
   }
 
   playSound(name: string, volume: number = 0.5): void {
@@ -37,20 +33,13 @@ class AudioManager {
     
     const audio = this.sounds.get(name);
     if (!audio) {
-      console.warn(`Sound not found: ${name}`);
       return;
     }
 
-    try {
-      // Clone and play to allow overlapping sounds
-      const audioClone = audio.cloneNode() as HTMLAudioElement;
-      audioClone.volume = volume;
-      audioClone.play().catch((error) => {
-        console.warn(`Failed to play sound: ${name}`, error);
-      });
-    } catch (error) {
-      console.warn(`Error playing sound: ${name}`, error);
-    }
+    // Clone and play to allow overlapping sounds
+    const audioClone = audio.cloneNode() as HTMLAudioElement;
+    audioClone.volume = volume;
+    audioClone.play().catch(() => {});
   }
 
   setVolume(volume: number): void {
