@@ -16,9 +16,9 @@
       {#each [1, 2, 3] as round}
         <div
           class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 border-2 {
-            round === currentRound ? 'bg-white text-[#294221] scale-110 shadow-lg border-[#C6B173]' :
-            round < currentRound ? 'bg-[#385025] text-white border-[#385025]' :
-            'bg-white/20 text-white border-white/30'
+            round === currentRound
+              ? 'bg-white text-[#294221] scale-110 shadow-lg border-[#C6B173]'
+              : 'bg-white/20 text-white border-white/30'
           }"
         >
           {round}

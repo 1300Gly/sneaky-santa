@@ -31,30 +31,10 @@
   onMount(() => {
     // Restore state and settings from localStorage
     restoreSettings();
-    const restored = restoreGameState();
-    console.log('GamePage mounted, restored state:', restored, 'roundStatus:', $gameState.roundStatus);
-    
-    // Debug: Check localStorage directly
-    if (typeof window !== 'undefined') {
-      const savedSettings = localStorage.getItem('pass-the-present:settings');
-      console.log('Raw localStorage settings:', savedSettings);
-      if (savedSettings) {
-        try {
-          const parsed = JSON.parse(savedSettings);
-          console.log('Parsed settings:', parsed);
-          console.log('digitalDiceEnabled in localStorage:', parsed.digitalDiceEnabled);
-        } catch (e) {
-          console.error('Failed to parse settings:', e);
-        }
-      }
-      console.log('Settings store after restore:', $settings);
-      console.log('digitalDiceEnabled in store:', $settings.digitalDiceEnabled);
-    }
+    restoreGameState();
 
     // Wait a bit for state to settle, then initialize deck if needed
     setTimeout(() => {
-      console.log('After timeout, roundStatus:', $gameState.roundStatus);
-      console.log('Settings after timeout:', $settings);
       // Only initialize deck if we're in playing mode and deck is empty
       if ($cardDeck.available.length === 0 && roundStatus === 'playing') {
         const deck = createDeck(currentRound, ruleMode);
@@ -62,9 +42,6 @@
       }
     }, 300);
   });
-  
-  // Debug: log when roundStatus changes
-  $: console.log('roundStatus changed to:', roundStatus);
   
   // Watch for round changes and reinitialize deck
   $: if (roundStatus === 'playing' && $cardDeck.available.length === 0) {
@@ -88,7 +65,6 @@
   
   function handleDiceRoll(value: number) {
     // Handle dice roll - could trigger card draw or other actions
-    console.log('Dice rolled:', value);
   }
   
   function handleSkipRound() {
@@ -119,7 +95,6 @@
       clearState('pass-the-present:state-version');
       // Also reset the game state store
       gameState.reset();
-      console.log('Game state cleared, redirecting to home');
     }
     window.location.href = '/';
   }
@@ -159,7 +134,7 @@
     {/key}
   {:else if roundStatus === 'playing' || roundStatus === 'paused'}
     <!-- Mobile Layout -->
-    <div class="lg:hidden container mx-auto px-4">
+    <div class="lg:hidden">
       <MobileGameLayout
         onSkipRound={handleSkipRound}
         onGoHome={handleGoHome}
@@ -180,10 +155,9 @@
               <div class="flex gap-2">
                 {#each [1, 2, 3] as round}
                   <div
-                    class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg text-white border-2 border-white transition-all font-['Poppins'] {
-                      round === currentRound ? 'bg-[#891515]' :
-                      round < currentRound ? 'bg-white text-[#891515]' :
-                      'bg-transparent'
+                    class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border-2 border-white transition-all font-['Poppins'] {
+                      round === currentRound ? 'bg-white text-[#891515] border-white' :
+                      'bg-transparent text-white/50 border-white/50'
                     }"
                   >
                     {round}
