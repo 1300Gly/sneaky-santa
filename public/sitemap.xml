@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sneaky-santa.app/</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sneaky-santa.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sneaky-santa.app/" />
   </url>
   <url>
     <loc>https://sneaky-santa.app/game</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sneaky-santa.app/game" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sneaky-santa.app/game" />
   </url>
   <url>
     <loc>https://sneaky-santa.app/rules</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sneaky-santa.app/rules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sneaky-santa.app/rules" />
   </url>
 </urlset>
