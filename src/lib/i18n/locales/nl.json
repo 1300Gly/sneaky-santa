@@ -206,6 +206,38 @@
           "6": "Stel één cadeau veilig. Niemand mag het meer afpakken. Pak dan nog een cadeau van iemand af!"
         }
       }
+    },
+    "adult": {
+      "round1": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Ruil één van jouw cadeaus met een cadeau van iemand anders",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt.",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Geef een cadeau dat op tafel ligt aan iemand anders",
+          "6": "Neem een slok"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Pak een speelkaart",
+          "3": "Geef een cadeau van jezelf aan iemand anders. Geen cadeau? Pak een speelkaart!",
+          "4": "Ruil twee cadeaus van verschillende eigenaars",
+          "5": "Pak één van de cadeaus in jouw bezit uit. Geen cadeau? Pak een speelkaart!",
+          "6": "Neem een slok"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Pak een speelkaart",
+          "2": "Verwissel twee cadeaus (van verschillende eigenaars)",
+          "3": "Het spel verandert van speelrichting. De persoon die voor jou aan de beurt was, is nu weer aan de beurt",
+          "4": "Pak een cadeau van iemand af",
+          "5": "Geef één van jouw cadeaus aan iemand anders. Geen cadeau? Pak een speelkaart!",
+          "6": "Stel één cadeau veilig. Niemand mag het meer afpakken."
+        }
+      }
     }
   },
   "timer": {
@@ -306,6 +338,32 @@
       "rollAgain2": "Je mag nog een keer dobbelen",
       "food": "Iemand anders moet iets te drinken en/of eten voor je pakken",
       "sing": "Wijs iemand aan die een kerstliedje moet zingen"
+    },
+    "adult": {
+      "round1": {
+        "card1": "Iedereen neemt een slok. Drink je geen alcohol, doe dan een kleine opdracht in plaats daarvan.",
+        "card2": "Kies iemand die twee slokken moet nemen. Weigert diegene, dan moet hij/zij jou een cadeau geven.",
+        "card3": "Ruil je drankje met iemand en neem allebei een slok.",
+        "card4": "Proost met de groep en neem samen een slok.",
+        "card5": "Kies iemand die een kerstverhaal moet vertellen of twee slokken neemt.",
+        "card6": "Jij bent deze beurt veilig. Kies iemand anders die een slok moet nemen."
+      },
+      "round2": {
+        "card1": "Ruil één van jouw cadeaus in voor drie slokken die jij mag uitdelen (jij kiest wie drinkt).",
+        "card2": "Kies twee mensen die een cadeau met elkaar moeten ruilen en allebei een slok nemen.",
+        "card3": "Geef één van jouw cadeaus weg. In ruil daarvoor kiest die persoon wie er drie slokken moet nemen.",
+        "card4": "Iedereen geeft zijn/haar drankje door naar links en neemt een slok.",
+        "card5": "Heb jij op dit moment de minste cadeaus? Deel dan drie slokken uit. Anders neem je er zelf twee.",
+        "card6": "Kies iemand die óf een kerstrefrein moet zingen óf drie slokken neemt."
+      },
+      "round3": {
+        "card1": "Stel één van jouw cadeaus veilig. Kies daarna iemand die twee slokken moet nemen.",
+        "card2": "Ruil een veiliggesteld cadeau tussen twee spelers. Beiden nemen een slok.",
+        "card3": "Iedereen met meer cadeaus dan jij neemt een slok.",
+        "card4": "Pak een cadeau van iemand af en neem allebei een slok om de deal te bezegelen.",
+        "card5": "Geef één van jouw cadeaus weg. De nieuwe eigenaar kiest wie er drie slokken moet nemen.",
+        "card6": "Iedereen heft zijn/haar glas: neem samen een laatste slok voor Sneaky Santa!"
+      }
     }
   },
   "setup": {
@@ -321,6 +379,8 @@
     "traditionalDescription": "Standaard spelregels volgens het originele ontwerp",
     "chaos": "Chaos",
     "chaosDescription": "Agressievere kaartacties, meer stelen/ruilen",
+    "adult": "18+ Feest",
+    "adultDescription": "Voor volwassen groepen: gewaagdere kaarten, drankjes en meer feest-chaos",
     "digitalDice": "Digitale dobbelsteen",
     "audio": "Geluid",
     "startGame": "Start Spel",

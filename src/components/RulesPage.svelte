@@ -5,7 +5,7 @@
   
   let selectedMode: RuleMode = 'traditional';
   
-  const modes: RuleMode[] = ['peaceful', 'traditional', 'chaos'];
+  const modes: RuleMode[] = ['peaceful', 'traditional', 'chaos', 'adult'];
   
   $: ruleset = getRuleset(selectedMode);
   $: diceRules1 = getDiceRules(1, selectedMode);

@@ -1,4 +1,4 @@
-export type RuleMode = 'peaceful' | 'traditional' | 'chaos';
+export type RuleMode = 'peaceful' | 'traditional' | 'chaos' | 'adult';
 
 export interface RoundSettings {
   timeLimit: number; // in minutes, 0 = no limit (Round 1)

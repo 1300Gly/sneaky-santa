@@ -2,6 +2,7 @@ import type { RuleMode } from '../../types';
 import { peacefulRuleset } from './peaceful';
 import { traditionalRuleset } from './traditional';
 import { chaosRuleset } from './chaos';
+import { adultRuleset } from './adult';
 
 export type DiceRule = {
   [key in 1 | 2 | 3 | 4 | 5 | 6]: string;
@@ -21,6 +22,7 @@ export const rulesets: Record<RuleMode, Ruleset> = {
   peaceful: peacefulRuleset,
   traditional: traditionalRuleset,
   chaos: chaosRuleset,
+  adult: adultRuleset,
 };
 
 export function getRuleset(mode: RuleMode): Ruleset {

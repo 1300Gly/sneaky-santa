@@ -206,6 +206,38 @@
           "6": "Secure one gift. No one may take it anymore. Then take another gift from someone!"
         }
       }
+    },
+    "adult": {
+      "round1": {
+        "diceRules": {
+          "1": "Take a game card",
+          "2": "Swap one of your gifts with someone else's gift.",
+          "3": "The game changes direction. The person who was before you is now next.",
+          "4": "Take a gift from someone",
+          "5": "Give a gift from the table to someone else",
+          "6": "Take a sip"
+        }
+      },
+      "round2": {
+        "diceRules": {
+          "1": "Take a game card",
+          "2": "Take a game card",
+          "3": "Give a gift from yourself to someone else. No gift? Take a playing card!",
+          "4": "Swap two gifts from different owners",
+          "5": "Unwrap one of the gifts in your possession. No gift? Take a playing card!",
+          "6": "Take a sip"
+        }
+      },
+      "round3": {
+        "diceRules": {
+          "1": "Take a playing card",
+          "2": "Swap two gifts (from different owners)",
+          "3": "The game changes direction. The person who was before you is now back to being next",
+          "4": "Take a gift from someone",
+          "5": "Give one of your gifts to someone else. No gift? Take a playing card!",
+          "6": "Secure one gift. No one may take it anymore."
+        }
+      }
     }
   },
   "timer": {
@@ -306,6 +338,32 @@
       "rollAgain2": "You may roll the dice again",
       "food": "Someone else must get something to drink and/or eat for you",
       "sing": "Point to someone who must sing a Christmas song"
+    },
+    "adult": {
+      "round1": {
+        "card1": "Everyone takes a sip. If you don't drink alcohol, do a small dare instead.",
+        "card2": "Choose someone to take two sips. If they refuse, they must give you one of their gifts.",
+        "card3": "Swap drinks with someone and both take a sip.",
+        "card4": "Cheers with the group and take a sip together.",
+        "card5": "Pick someone who must tell a Christmas story or take two sips.",
+        "card6": "You are safe this turn. Choose someone else to take a sip."
+      },
+      "round2": {
+        "card1": "Trade one of your gifts for three sips you give away (you decide who drinks).",
+        "card2": "Choose two people who must swap a gift and both take a sip.",
+        "card3": "Give one of your gifts away. In return, that person chooses who takes three sips.",
+        "card4": "Everyone passes their drink to the left and takes a sip.",
+        "card5": "If you currently have the fewest gifts, give out three sips. Otherwise, take two.",
+        "card6": "Pick someone who must either sing a Christmas chorus or take three sips."
+      },
+      "round3": {
+        "card1": "Secure one of your gifts. Then choose someone to take two sips.",
+        "card2": "Swap a secured gift between two players. Both take a sip.",
+        "card3": "Everyone with more gifts than you takes a sip.",
+        "card4": "Take a gift from someone and both take a sip to seal the deal.",
+        "card5": "Give one of your gifts away. The new owner chooses who takes three sips.",
+        "card6": "Everyone raises their glass: take one final sip together for Sneaky Santa!"
+      }
     }
   },
   "setup": {
@@ -321,6 +379,8 @@
     "traditionalDescription": "Standard game rules as per original design",
     "chaos": "Chaos",
     "chaosDescription": "More aggressive card actions, increased stealing/swapping",
+    "adult": "18+ Party",
+    "adultDescription": "For adult groups: more daring cards, drinks and party-style chaos",
     "digitalDice": "Digital dice",
     "audio": "Audio",
     "startGame": "Start Game",

@@ -19,6 +19,10 @@
       value: 'chaos',
       descriptionKey: 'setup.chaosDescription',
     },
+    {
+      value: 'adult',
+      descriptionKey: 'setup.adultDescription',
+    },
   ];
   
   $: currentMode = $gameState.ruleMode;
