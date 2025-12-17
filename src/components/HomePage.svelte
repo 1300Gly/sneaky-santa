@@ -89,15 +89,15 @@
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start">
               <Button
-                variant="primary"
+                variant="secondary"
                 size="lg"
                 on:click={handlePlayGame}
-                class="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 font-bold shadow-2xl hover:shadow-[0_0_20px_rgba(137,21,21,0.6)]"
+                class="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 font-bold shadow-2xl hover:shadow-[0_0_20px_rgba(56,80,37,0.6)]"
               >
                 {$translate('game.ctaPrimary')}
               </Button>
               <Button
-                variant="secondary"
+                variant="primary"
                 size="lg"
                 on:click={() => window.location.href = '/rules'}
                 class="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 font-bold shadow-xl hover:shadow-2xl"
@@ -226,7 +226,7 @@
       
       <div class="text-center">
         <Button
-          variant="primary"
+          variant="secondary"
           size="lg"
           on:click={handlePlayGame}
           class="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-2.5 sm:py-3 md:py-4 font-bold shadow-lg hover:shadow-xl transition-shadow"
@@ -265,7 +265,7 @@
       </div>
       <div class="text-center">
         <Button
-          variant="secondary"
+          variant="primary"
           size="md"
           on:click={() => window.location.href = '/rules'}
           class="text-sm sm:text-base"
@@ -286,10 +286,10 @@
         {$translate('game.readyToPlayDescription')}
       </p>
       <Button
-        variant="primary"
+        variant="secondary"
         size="lg"
         on:click={handlePlayGame}
-        class="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 font-bold !bg-white !text-[#891515] hover:!bg-[#F5E6D3] !border-white hover:!border-[#F5E6D3] shadow-xl hover:shadow-2xl transition-all"
+        class="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 font-bold shadow-xl hover:shadow-2xl transition-all"
       >
         {$translate('game.ctaPrimary')}
       </Button>
