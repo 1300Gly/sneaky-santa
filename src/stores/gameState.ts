@@ -9,7 +9,7 @@ const defaultGameState: GameState = {
   roundSettings: {
     round1: { timeLimit: 0, timeLimitEnabled: false },
     round2: { timeLimit: 30, timeLimitEnabled: true },
-    round3: { timeLimit: 30, timeLimitEnabled: true },
+    round3: { timeLimit: 20, timeLimitEnabled: true },
   },
   timer: {
     isRunning: false,
