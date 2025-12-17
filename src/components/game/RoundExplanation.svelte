@@ -3,9 +3,9 @@
   import { gameState } from '../../stores/gameState';
   import { translate } from '../../lib/i18n';
   import Button from '../ui/Button.svelte';
-  import Countdown from '../ui/Countdown.svelte';
   
-  let showCountdown: boolean = false;
+  export let onStartCountdown: () => void = () => {};
+  
   let container: HTMLDivElement;
   let mounted = false;
   
@@ -17,22 +17,7 @@
   });
   
   function handleStartRound() {
-    showCountdown = true;
-  }
-  
-  function handleCountdownComplete() {
-    showCountdown = false;
-    gameState.updateRoundStatus('playing');
-    
-    // Start timer if enabled for this round
-    const roundSettings = $gameState.roundSettings[`round${currentRound}` as 'round1' | 'round2' | 'round3'];
-    if (roundSettings.timeLimitEnabled && roundSettings.timeLimit > 0) {
-      import('../../stores/timer').then(({ timer }) => {
-        import('../../lib/timer/timerUtils').then(({ convertMinutesToSeconds }) => {
-          timer.startTimer(convertMinutesToSeconds(roundSettings.timeLimit), currentRound);
-        });
-      });
-    }
+    onStartCountdown();
   }
 </script>
 
@@ -60,13 +45,6 @@
     </Button>
   </div>
 </div>
-
-{#if showCountdown}
-  <Countdown
-    startValue={3}
-    onComplete={handleCountdownComplete}
-  />
-{/if}
 
 <style>
   .card {
