@@ -16,11 +16,8 @@
   $: audioEnabled = $settings.audioEnabled;
   
   function handleStartGame() {
-    console.log('handleStartGame called');
-    
     // Update state to explanation
     gameState.updateRoundStatus('explanation');
-    console.log('State updated to explanation');
     
     // Force synchronous save by getting state and saving immediately
     // Use a small delay to ensure store update has propagated
@@ -28,7 +25,6 @@
       if (typeof window !== 'undefined') {
         // Use get() to get the current state synchronously
         const currentState = get(gameState);
-        console.log('Saving state with roundStatus:', currentState.roundStatus);
         
         try {
           // Update the state object to ensure it has explanation status
@@ -45,7 +41,6 @@
           const saved = localStorage.getItem('pass-the-present:game-state');
           if (saved) {
             const parsed = JSON.parse(saved);
-            console.log('Verified saved state roundStatus:', parsed.roundStatus);
             
             // Double-check it's correct
             if (parsed.roundStatus !== 'explanation') {
@@ -56,7 +51,6 @@
           
           // Small delay to ensure localStorage write completes, then navigate
           setTimeout(() => {
-            console.log('Navigating to game page...');
             if (onStart) {
               onStart();
             }
@@ -94,11 +88,9 @@
               checked={digitalDiceEnabled}
               on:change={() => {
                 settings.toggleDigitalDice();
-                console.log('Toggled digital dice, new value:', $settings.digitalDiceEnabled);
                 // Force immediate save
                 setTimeout(() => {
                   persistSettings();
-                  console.log('Settings explicitly saved after toggle');
                 }, 50);
               }}
               class="sr-only"
