@@ -7,7 +7,7 @@ export interface Card {
   round: RoundNumber;
   text: string; // i18n key
   icon?: string;
-  mode: ('peaceful' | 'traditional' | 'chaos')[];
+  mode: ('peaceful' | 'traditional' | 'chaos' | 'adult')[];
   isSaveCard?: boolean; // Can be kept and played later
   canNullifyAction?: boolean; // Can be used to cancel actions against player
 }

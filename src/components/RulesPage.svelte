@@ -2,8 +2,12 @@
   import { translate } from '../lib/i18n';
   import type { RuleMode } from '../types';
   import { getDiceRules, getRuleset } from '../config/rulesets';
+  import { onMount } from 'svelte';
   
   let selectedMode: RuleMode = 'traditional';
+  let tabContainer: HTMLDivElement;
+  let scrollLeftIndicator: HTMLDivElement;
+  let scrollRightIndicator: HTMLDivElement;
   
   const modes: RuleMode[] = ['peaceful', 'traditional', 'chaos', 'adult'];
   
@@ -14,6 +18,36 @@
   $: diceRules1Entries = Object.entries(diceRules1);
   $: diceRules2Entries = Object.entries(diceRules2);
   $: diceRules3Entries = Object.entries(diceRules3);
+  
+  function updateScrollIndicators() {
+    if (!tabContainer || typeof window === 'undefined') return;
+    
+    const { scrollLeft, scrollWidth, clientWidth } = tabContainer;
+    const isAtStart = scrollLeft <= 0;
+    const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+    
+    if (scrollLeftIndicator) {
+      scrollLeftIndicator.style.opacity = isAtStart ? '0' : '1';
+    }
+    if (scrollRightIndicator) {
+      scrollRightIndicator.style.opacity = isAtEnd ? '0' : '1';
+    }
+  }
+  
+  onMount(() => {
+    if (typeof window === 'undefined' || !tabContainer) return;
+    
+    updateScrollIndicators();
+    tabContainer.addEventListener('scroll', updateScrollIndicators);
+    window.addEventListener('resize', updateScrollIndicators);
+    
+    return () => {
+      if (tabContainer) {
+        tabContainer.removeEventListener('scroll', updateScrollIndicators);
+      }
+      window.removeEventListener('resize', updateScrollIndicators);
+    };
+  });
 </script>
 
 <div class="container mx-auto px-4 py-8 max-w-6xl">
@@ -53,19 +87,27 @@
   <!-- Rule Mode Tabs -->
   <div class="bg-white rounded-xl shadow-lg overflow-hidden">
     <!-- Tab Headers -->
-    <div class="flex border-b-2 border-[#C6B173]/30 bg-[#F5E6D3]">
-      {#each modes as mode}
-        <button
-          on:click={() => selectedMode = mode}
-          class="flex-1 px-6 py-4 font-semibold text-lg font-['Poppins'] transition-all duration-200 {
-            selectedMode === mode
-              ? 'bg-[#891515] text-white border-b-4 border-[#891515]'
-              : 'text-gray-600 bg-gray-100 hover:bg-gray-200'
-          }"
-        >
-          {$translate(`setup.${mode}`)}
-        </button>
-      {/each}
+    <div class="relative border-b-2 border-[#C6B173]/30 bg-[#F5E6D3]">
+      <!-- Scrollable container for mobile -->
+      <div bind:this={tabContainer} class="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+        <div class="flex min-w-max md:min-w-0 md:flex-nowrap">
+          {#each modes as mode}
+            <button
+              on:click={() => selectedMode = mode}
+              class="flex-shrink-0 md:flex-1 px-4 sm:px-6 py-3 sm:py-4 font-semibold text-base sm:text-lg font-['Poppins'] transition-all duration-200 whitespace-nowrap snap-start {
+                selectedMode === mode
+                  ? 'bg-[#891515] text-white border-b-4 border-[#891515]'
+                  : 'text-gray-600 bg-gray-100 hover:bg-gray-200'
+              }"
+            >
+              {$translate(`setup.${mode}`)}
+            </button>
+          {/each}
+        </div>
+      </div>
+      <!-- Scroll indicators on mobile -->
+      <div bind:this={scrollLeftIndicator} class="md:hidden absolute top-0 left-0 w-8 h-full bg-gradient-to-r from-[#F5E6D3] to-transparent pointer-events-none opacity-0 transition-opacity duration-300"></div>
+      <div bind:this={scrollRightIndicator} class="md:hidden absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-[#F5E6D3] to-transparent pointer-events-none opacity-100 transition-opacity duration-300"></div>
     </div>
     
     <!-- Tab Content -->
