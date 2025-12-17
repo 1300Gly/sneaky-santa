@@ -5,9 +5,10 @@ import RulesPage from '../components/RulesPage.svelte';
 const title = 'Sneaky Santa – Spelregels & Rondes Uitleg';
 const description =
   'Lees de spelregels van Sneaky Santa. Ontdek hoe de drie rondes werken, wat de dobbelsteenresultaten betekenen en welke acties bij elke spelmodus horen.';
+const keywords = 'sneaky santa spelregels, kerst dobbelspel regels, cadeau uitwisseling uitleg, kerstspel instructies, dobbelsteen spel regels';
 ---
 
-<MainLayout {title} {description} canonicalPath="/rules">
+<MainLayout {title} {description} {keywords} canonicalPath="/rules">
   <RulesPage client:load />
 </MainLayout>
 

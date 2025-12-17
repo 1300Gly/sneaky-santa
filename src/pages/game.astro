@@ -5,10 +5,11 @@ import GamePage from '../components/game/GamePage.svelte';
 const title = 'Sneaky Santa – Speel het Kerst Dobbelspel Online';
 const description =
   'Speel Sneaky Santa direct in je browser. Stel rondetimers in, kies een spelmodus en laat de dobbelsteen en kaarten bepalen welke cadeaus er worden gestolen, geruild of veiliggesteld.';
+const keywords = 'speel kerst dobbelspel, online kerstspel, kerst game spelen, cadeau uitwisseling spel, dobbelsteen kerstspel, interactief kerstspel';
 ---
 
-<MainLayout {title} {description} canonicalPath="/game">
-  <div class="container mx-auto px-4 py-8 lg:py-24">
+<MainLayout {title} {description} {keywords} canonicalPath="/game">
+  <div class="container mx-auto px-3 py-3 lg:px-4 lg:py-24">
     <GamePage client:load />
   </div>
 </MainLayout>
