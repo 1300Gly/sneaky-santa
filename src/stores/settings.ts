@@ -3,7 +3,7 @@ import type { Settings } from '../types';
 
 const defaultSettings: Settings = {
   audioEnabled: true,
-  digitalDiceEnabled: false,
+  digitalDiceEnabled: true,
   language: 'nl',
 };
 
