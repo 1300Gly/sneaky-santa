@@ -11,6 +11,8 @@
   export let onRoundOver: (() => void) | null = null;
   
   let showResetConfirm: boolean = false;
+  let isResetConfirmVisible: boolean = false;
+  let isResetConfirmAnimating: boolean = false;
   let showWarning: boolean = false;
   let showRoundOver: boolean = false;
   let warningMessage: string = '';
@@ -90,16 +92,29 @@
   
   function handleReset() {
     showResetConfirm = true;
+    setTimeout(() => {
+      isResetConfirmVisible = true;
+    }, 10);
   }
   
   function confirmReset() {
-    timer.resetTimer();
-    showResetConfirm = false;
-    totalTime = 0;
+    isResetConfirmVisible = false;
+    isResetConfirmAnimating = true;
+    setTimeout(() => {
+      timer.resetTimer();
+      showResetConfirm = false;
+      isResetConfirmAnimating = false;
+      totalTime = 0;
+    }, 300);
   }
   
   function cancelReset() {
-    showResetConfirm = false;
+    isResetConfirmVisible = false;
+    isResetConfirmAnimating = true;
+    setTimeout(() => {
+      showResetConfirm = false;
+      isResetConfirmAnimating = false;
+    }, 300);
   }
   
   function closeWarning() {
@@ -157,9 +172,9 @@
   {/if}
 </div>
 
-{#if showResetConfirm}
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-    <div class="card max-w-md w-full mx-4">
+{#if showResetConfirm || isResetConfirmAnimating}
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 modal-backdrop" class:backdrop-enter={isResetConfirmVisible} class:backdrop-exit={!isResetConfirmVisible && isResetConfirmAnimating}>
+    <div class="card max-w-md w-full mx-4 modal-spring" class:modal-enter={isResetConfirmVisible} class:modal-exit={!isResetConfirmVisible && isResetConfirmAnimating}>
       <h3 class="text-2xl font-bold mb-4 text-[#294221]">{$translate('timer.resetConfirm')}</h3>
       <p class="text-[#294221] font-open-sans mb-4">
         {$translate('timer.resetConfirmMessage')}
