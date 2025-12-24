@@ -35,6 +35,7 @@
     "allRoundsFinished": "Alle rondes zijn afgelopen. Bedankt voor het spelen!",
     "startNewGame": "Nieuw Spel Starten",
     "skipToNextRound": "Sla Ronde Over",
+    "nextRound": "Volgende Ronde",
     "skipToNextRoundTitle": "Sla Ronde Over?",
     "skipToNextRoundConfirm": "Weet je zeker dat je naar Ronde {round} wilt gaan? Dit beëindigt de huidige ronde.",
     "leaveGame": "Verlaat Spel",
@@ -343,23 +344,23 @@
       "round1": {
         "card1": "Iedereen neemt een slok. Drink je geen alcohol, doe dan een kleine opdracht in plaats daarvan.",
         "card2": "Kies iemand die twee slokken moet nemen. Weigert diegene, dan moet hij/zij jou een cadeau geven.",
-        "card3": "Ruil je drankje met iemand en neem allebei een slok.",
-        "card4": "Proost met de groep en neem samen een slok.",
+        "card3": "Ruil één van jouw cadeaus met een cadeau van iemand anders, neem daarna allebei een slok.",
+        "card4": "Iedereen geeft één cadeau aan de persoon links van hem/haar, proost daarna samen.",
         "card5": "Kies iemand die een kerstverhaal moet vertellen of twee slokken neemt.",
-        "card6": "Jij bent deze beurt veilig. Kies iemand anders die een slok moet nemen."
+        "card6": "Je mag nog een keer dobbelen, of kies iemand die een slok moet nemen."
       },
       "round2": {
         "card1": "Ruil één van jouw cadeaus in voor drie slokken die jij mag uitdelen (jij kiest wie drinkt).",
         "card2": "Kies twee mensen die een cadeau met elkaar moeten ruilen en allebei een slok nemen.",
-        "card3": "Geef één van jouw cadeaus weg. In ruil daarvoor kiest die persoon wie er drie slokken moet nemen.",
+        "card3": "Pak één van jouw cadeaus uit. Geen cadeau? Pak een speelkaart!",
         "card4": "Iedereen geeft zijn/haar drankje door naar links en neemt een slok.",
-        "card5": "Heb jij op dit moment de minste cadeaus? Deel dan drie slokken uit. Anders neem je er zelf twee.",
+        "card5": "Alle cadeaus schuiven één plaats naar rechts, daarna neemt iedereen een slok.",
         "card6": "Kies iemand die óf een kerstrefrein moet zingen óf drie slokken neemt."
       },
       "round3": {
         "card1": "Stel één van jouw cadeaus veilig. Kies daarna iemand die twee slokken moet nemen.",
         "card2": "Ruil een veiliggesteld cadeau tussen twee spelers. Beiden nemen een slok.",
-        "card3": "Iedereen met meer cadeaus dan jij neemt een slok.",
+        "card3": "Iedereen stelt één cadeau veilig, daarna neemt iedereen een slok om te vieren.",
         "card4": "Pak een cadeau van iemand af en neem allebei een slok om de deal te bezegelen.",
         "card5": "Geef één van jouw cadeaus weg. De nieuwe eigenaar kiest wie er drie slokken moet nemen.",
         "card6": "Iedereen heft zijn/haar glas: neem samen een laatste slok voor Sneaky Santa!"

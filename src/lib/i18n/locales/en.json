@@ -35,6 +35,7 @@
     "allRoundsFinished": "All rounds are finished. Thank you for playing!",
     "startNewGame": "Start New Game",
     "skipToNextRound": "Skip to Next Round",
+    "nextRound": "Next Round",
     "skipToNextRoundTitle": "Skip to Next Round?",
     "skipToNextRoundConfirm": "Are you sure you want to skip to Round {round}? This will end the current round.",
     "leaveGame": "Leave Game",
@@ -343,23 +344,23 @@
       "round1": {
         "card1": "Everyone takes a sip. If you don't drink alcohol, do a small dare instead.",
         "card2": "Choose someone to take two sips. If they refuse, they must give you one of their gifts.",
-        "card3": "Swap drinks with someone and both take a sip.",
-        "card4": "Cheers with the group and take a sip together.",
+        "card3": "Swap one of your gifts with someone else's gift, then both take a sip.",
+        "card4": "Everyone gives one gift to the person to their left, then cheers together.",
         "card5": "Pick someone who must tell a Christmas story or take two sips.",
-        "card6": "You are safe this turn. Choose someone else to take a sip."
+        "card6": "You may roll the dice again, or choose someone to take a sip."
       },
       "round2": {
         "card1": "Trade one of your gifts for three sips you give away (you decide who drinks).",
         "card2": "Choose two people who must swap a gift and both take a sip.",
-        "card3": "Give one of your gifts away. In return, that person chooses who takes three sips.",
+        "card3": "Unwrap one of your gifts. If you don't have one, take a playing card!",
         "card4": "Everyone passes their drink to the left and takes a sip.",
-        "card5": "If you currently have the fewest gifts, give out three sips. Otherwise, take two.",
+        "card5": "All gifts move one place to the right, then everyone takes a sip.",
         "card6": "Pick someone who must either sing a Christmas chorus or take three sips."
       },
       "round3": {
         "card1": "Secure one of your gifts. Then choose someone to take two sips.",
         "card2": "Swap a secured gift between two players. Both take a sip.",
-        "card3": "Everyone with more gifts than you takes a sip.",
+        "card3": "Everyone secures one gift, then everyone takes a sip to celebrate.",
         "card4": "Take a gift from someone and both take a sip to seal the deal.",
         "card5": "Give one of your gifts away. The new owner chooses who takes three sips.",
         "card6": "Everyone raises their glass: take one final sip together for Sneaky Santa!"
