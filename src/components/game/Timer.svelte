@@ -9,6 +9,9 @@
   import RoundOverModal from './RoundOverModal.svelte';
   
   export let onRoundOver: (() => void) | null = null;
+  export let onWarning: ((message: string, timeRemaining: number) => void) | null = null;
+  export let onRoundOverShow: (() => void) | null = null;
+  export let onResetConfirm: (() => void) | null = null;
   
   let showResetConfirm: boolean = false;
   let isResetConfirmVisible: boolean = false;
@@ -32,7 +35,13 @@
     intervalId = setInterval(() => {
       // Check if timer reached 0 (timer stops when it reaches 0, so isRunning becomes false)
       if (!isRunning && timeRemaining === 0 && totalTime > 0 && !showRoundOver) {
-        showRoundOver = true;
+        // Notify parent to show round over modal
+        if (onRoundOverShow) {
+          onRoundOverShow();
+        } else {
+          // Fallback to local modal if no parent handler
+          showRoundOver = true;
+        }
         // Play round end sound
         import('../../lib/timer/notifications').then(({ triggerRoundEnd }) => {
           triggerRoundEnd();
@@ -54,7 +63,13 @@
           timer.markWarningShown(warning.warning);
           warningMessage = warning.message;
           warningTimeRemaining = timeRemaining;
-          showWarning = true;
+          // Notify parent to show warning modal
+          if (onWarning) {
+            onWarning(warning.message, timeRemaining);
+          } else {
+            // Fallback to local modal if no parent handler
+            showWarning = true;
+          }
           triggerWarning({
             type: warning.warning,
             message: warning.message,
@@ -99,10 +114,16 @@
   }
   
   function handleReset() {
-    showResetConfirm = true;
-    setTimeout(() => {
-      isResetConfirmVisible = true;
-    }, 10);
+    // Notify parent to show reset confirmation modal
+    if (onResetConfirm) {
+      onResetConfirm();
+    } else {
+      // Fallback to local modal if no parent handler
+      showResetConfirm = true;
+      setTimeout(() => {
+        isResetConfirmVisible = true;
+      }, 10);
+    }
   }
   
   function confirmReset() {
@@ -181,8 +202,9 @@
   {/if}
 </div>
 
-{#if showResetConfirm || isResetConfirmAnimating}
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 modal-backdrop" class:backdrop-enter={isResetConfirmVisible} class:backdrop-exit={!isResetConfirmVisible && isResetConfirmAnimating}>
+<!-- Reset confirmation modal rendered at parent level for proper z-index -->
+{#if (showResetConfirm || isResetConfirmAnimating) && !onResetConfirm}
+  <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 modal-backdrop" class:backdrop-enter={isResetConfirmVisible} class:backdrop-exit={!isResetConfirmVisible && isResetConfirmAnimating} style="position: fixed;">
     <div class="card max-w-md w-full mx-4 modal-spring" class:modal-enter={isResetConfirmVisible} class:modal-exit={!isResetConfirmVisible && isResetConfirmAnimating}>
       <h3 class="text-2xl font-bold mb-4 text-[#294221]">{$translate('timer.resetConfirm')}</h3>
       <p class="text-[#294221] font-open-sans mb-4">
@@ -206,7 +228,8 @@
   </div>
 {/if}
 
-{#if showWarning}
+<!-- Warning modal rendered at parent level for proper z-index -->
+{#if showWarning && !onWarning}
   <TimerWarningModal
     message={warningMessage}
     timeRemaining={warningTimeRemaining}
@@ -216,7 +239,8 @@
   />
 {/if}
 
-{#if showRoundOver}
+<!-- Round over modal rendered at parent level for proper z-index -->
+{#if showRoundOver && !onRoundOverShow}
   <RoundOverModal
     isOpen={showRoundOver}
     currentRound={currentRound}
