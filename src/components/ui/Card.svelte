@@ -36,19 +36,21 @@
   tabindex="0"
   on:keydown={(e) => e.key === 'Enter' && handleReveal()}
 >
-  {#if !isRevealed}
-    <div class="card-back bg-gradient-to-br from-[#891515] to-[#B42D1A] rounded-xl shadow-lg p-8 flex items-center justify-center min-h-[200px] border-2 border-[#C6B173]/30">
-      <div class="text-white text-center">
-        <img
-          src="/icons/sneaky-santa.svg"
-          alt="Sneaky Santa logo"
-          class="w-16 h-16 mx-auto mb-4 object-contain drop-shadow-lg"
-          loading="lazy"
-        />
-        <p class="text-xl font-semibold">Sneaky Santa</p>
-      </div>
+  <!-- Card Back - Always rendered for animation -->
+  <div class="card-back bg-gradient-to-br from-[#891515] to-[#B42D1A] rounded-xl shadow-lg p-8 flex items-center justify-center min-h-[200px] border-2 border-[#C6B173]/30">
+    <div class="text-white text-center">
+      <img
+        src="/icons/sneaky-santa.svg"
+        alt="Sneaky Santa logo"
+        class="w-16 h-16 mx-auto mb-4 object-contain drop-shadow-lg"
+        loading="lazy"
+      />
+      <p class="text-xl font-semibold">Sneaky Santa</p>
     </div>
-  {:else if card}
+  </div>
+  
+  <!-- Card Front - Always rendered for animation -->
+  {#if card}
     <div class="card-front bg-white rounded-xl shadow-lg p-8 min-h-[200px] border-2 border-[#C6B173]">
       <div class="text-center">
         <div class="mb-4">
@@ -74,52 +76,45 @@
 <style>
   .card-container {
     perspective: 1000px;
+    width: 100%;
   }
   
   .card-back,
   .card-front {
-    backface-visibility: hidden;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .card-container:not(.revealed) .card-back {
-    transform: rotateY(0deg);
-  }
-  
-  .card-container.revealed .card-back {
-    transform: rotateY(180deg);
-  }
-  
-  .card-container:not(.revealed) .card-front {
-    transform: rotateY(-180deg);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
   }
   
+  /* Card Back - visible when not revealed */
+  .card-container:not(.revealed) .card-back {
+    transform: rotateY(0deg);
+    position: relative;
+  }
+  
+  /* Card Back - hidden when revealed */
+  .card-container.revealed .card-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* Card Front - hidden when not revealed */
+  .card-container:not(.revealed) .card-front {
+    transform: rotateY(-180deg);
+  }
+  
+  /* Card Front - visible when revealed */
   .card-container.revealed .card-front {
     transform: rotateY(0deg);
-    animation: cardReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
   }
   
   .card-container:hover:not(.revealed) .card-back {
     transform: scale(1.05) rotateY(0deg);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  }
-  
-  @keyframes cardReveal {
-    0% {
-      opacity: 0;
-      transform: rotateY(-180deg) scale(0.9);
-    }
-    50% {
-      transform: rotateY(-90deg) scale(1.05);
-    }
-    100% {
-      opacity: 1;
-      transform: rotateY(0deg) scale(1);
-    }
   }
 </style>
 
