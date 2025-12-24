@@ -11,24 +11,25 @@
 
 <Modal
   isOpen={isOpen}
-  title={$translate('timer.roundOver')}
+  title={currentRound < 3 ? $translate('timer.roundOver') : $translate('game.gameComplete')}
   onClose={onClose}
   size="md"
   canClose={false}
   align="center"
 >
   <div class="text-center space-y-4">
-    <div class="text-6xl mb-4">⏰</div>
-    <p class="text-lg text-[#294221] font-open-sans">
-      {$translate('timer.roundOverMessage')}
-    </p>
     {#if currentRound < 3}
+      <div class="text-6xl mb-4">⏰</div>
+      <p class="text-lg text-[#294221] font-open-sans">
+        {$translate('timer.roundOverMessage')}
+      </p>
       <p class="text-md text-[#294221]/80 font-open-sans">
         {$translate('timer.roundOverNextRound').replace('{round}', String(currentRound + 1))}
       </p>
     {:else}
-      <p class="text-md text-[#294221]/80 font-open-sans">
-        {$translate('timer.roundOverGameComplete')}
+      <div class="text-6xl mb-4">🎉</div>
+      <p class="text-lg text-[#294221] font-open-sans leading-relaxed">
+        {$translate('timer.roundOverCelebrationMessage')}
       </p>
     {/if}
   </div>
@@ -48,7 +49,7 @@
         size="lg"
         on:click={onNextRound}
       >
-        {$translate('game.startNewGame')}
+        {$translate('timer.backToHome')}
       </Button>
     {/if}
   </div>

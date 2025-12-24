@@ -85,9 +85,10 @@
   }
 </script>
 
+<!-- Render modal with high z-index to avoid stacking context issues -->
 {#if isOpen || isAnimating}
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 modal-backdrop"
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 modal-backdrop"
     class:backdrop-enter={isVisible}
     class:backdrop-exit={!isVisible && isAnimating}
     role="dialog"
@@ -96,50 +97,51 @@
     tabindex="-1"
     on:click={handleBackdropClick}
     on:keydown={handleEscape}
+    style="position: fixed;"
   >
-    <div
-      class="bg-white rounded-xl shadow-2xl {sizeClasses[size]} w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-[#C6B173]/20 modal-spring {align === 'center' ? 'relative' : ''}"
-      class:modal-enter={isVisible}
-      class:modal-exit={!isVisible && isAnimating}
-    >
-      {#if title}
-        <div class="flex items-center {align === 'center' ? 'justify-center' : 'justify-between'} p-6 border-b-2 border-[#C6B173]/30">
-          <h2 id="modal-title" class="text-2xl font-bold text-[#294221] {align === 'center' ? 'text-center' : ''}">{title}</h2>
-          {#if canClose}
+      <div
+        class="bg-white rounded-xl shadow-2xl {sizeClasses[size]} w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-[#C6B173]/20 modal-spring {align === 'center' ? 'relative' : ''}"
+        class:modal-enter={isVisible}
+        class:modal-exit={!isVisible && isAnimating}
+      >
+        {#if title}
+          <div class="flex items-center {align === 'center' ? 'justify-center' : 'justify-between'} p-6 border-b-2 border-[#C6B173]/30">
+            <h2 id="modal-title" class="text-2xl font-bold text-[#294221] {align === 'center' ? 'text-center' : ''}">{title}</h2>
+            {#if canClose}
+              <button
+                on:click={handleClose}
+                class="text-gray-400 hover:text-gray-600 transition-colors {align === 'center' ? 'absolute top-6 right-6' : ''}"
+                aria-label="Close modal"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            {/if}
+          </div>
+        {:else if canClose}
+          <div class="absolute top-4 right-4 z-10">
             <button
               on:click={handleClose}
-              class="text-gray-400 hover:text-gray-600 transition-colors {align === 'center' ? 'absolute top-6 right-6' : ''}"
+              class="text-gray-400 hover:text-gray-600 transition-colors"
               aria-label="Close modal"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-          {/if}
+          </div>
+        {/if}
+        
+        <div class="p-6 {align === 'center' ? 'text-center' : ''}">
+          <slot />
         </div>
-      {:else if canClose}
-        <div class="absolute top-4 right-4 z-10">
-          <button
-            on:click={handleClose}
-            class="text-gray-400 hover:text-gray-600 transition-colors"
-            aria-label="Close modal"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      {/if}
-      
-      <div class="p-6 {align === 'center' ? 'text-center' : ''}">
-        <slot />
+        
+        {#if $$slots.footer}
+          <div class="p-6 border-t-2 border-[#C6B173]/30 {align === 'center' ? 'text-center' : ''}">
+            <slot name="footer" />
+          </div>
+        {/if}
       </div>
-      
-      {#if $$slots.footer}
-        <div class="p-6 border-t-2 border-[#C6B173]/30 {align === 'center' ? 'text-center' : ''}">
-          <slot name="footer" />
-        </div>
-      {/if}
     </div>
-  </div>
 {/if}

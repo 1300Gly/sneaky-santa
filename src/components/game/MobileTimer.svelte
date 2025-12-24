@@ -173,7 +173,7 @@
 </div>
 
 {#if showResetConfirm || isResetConfirmAnimating}
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 modal-backdrop" class:backdrop-enter={isResetConfirmVisible} class:backdrop-exit={!isResetConfirmVisible && isResetConfirmAnimating}>
+  <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 modal-backdrop" class:backdrop-enter={isResetConfirmVisible} class:backdrop-exit={!isResetConfirmVisible && isResetConfirmAnimating} style="position: fixed;">
     <div class="card max-w-md w-full mx-4 modal-spring" class:modal-enter={isResetConfirmVisible} class:modal-exit={!isResetConfirmVisible && isResetConfirmAnimating}>
       <h3 class="text-2xl font-bold mb-4 text-[#294221]">{$translate('timer.resetConfirm')}</h3>
       <p class="text-[#294221] font-open-sans mb-4">
