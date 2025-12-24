@@ -3,13 +3,10 @@
   import { cardDeck } from '../../stores/cards';
   import { translate } from '../../lib/i18n';
   import Button from '../ui/Button.svelte';
-  import CardRevealModal from './CardRevealModal.svelte';
   
-  // Use reactive $translate instead
-  let showCardModal: boolean = false;
-  
-  $: currentCard = $cardDeck.currentCard;
   $: availableCards = $cardDeck.available;
+  
+  export let onPickCard: () => void = () => {};
   
   function handlePickCard() {
     if (availableCards.length === 0) {
@@ -19,19 +16,10 @@
     
     const drawnCard = cardDeck.drawCard();
     
-    // Show card in modal
+    // Notify parent to show modal
     if (drawnCard) {
-      showCardModal = true;
+      onPickCard();
     }
-  }
-  
-  function handleCloseCardModal() {
-    // Automatically discard the card (it's already in the drawn array)
-    // Note: Save cards are handled within the modal itself
-    if (currentCard && !currentCard.isSaveCard) {
-      cardDeck.clearCurrentCard();
-    }
-    showCardModal = false;
   }
 </script>
 
@@ -44,12 +32,4 @@
     {$translate('cards.pickCard')}
   </button>
 </div>
-
-{#if showCardModal && currentCard}
-  <CardRevealModal
-    card={currentCard}
-    isOpen={showCardModal}
-    onClose={handleCloseCardModal}
-  />
-{/if}
 
