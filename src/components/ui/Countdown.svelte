@@ -55,7 +55,7 @@
   });
 </script>
 
-<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 modal-backdrop" class:backdrop-enter={isVisible && !isAnimating} class:backdrop-exit={!isVisible && isAnimating}>
+<div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 modal-backdrop" class:backdrop-enter={isVisible && !isAnimating} class:backdrop-exit={!isVisible && isAnimating} style="position: fixed;">
   <div class="text-center">
     {#if !isComplete}
       <div
