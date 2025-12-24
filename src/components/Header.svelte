@@ -63,6 +63,12 @@
   function handlePlayGame() {
     if (typeof window === 'undefined') return;
     
+    // If we're in an active game, navigate to home
+    if (isInGame) {
+      handleNavigation('/');
+      return;
+    }
+    
     // Check if there's an existing active game
     const currentState = $gameState;
     if (currentState.roundStatus !== 'setup' && 
@@ -155,12 +161,14 @@
       <div class="hidden md:flex items-center gap-3 lg:gap-4">
         <!-- Navigation Links -->
         <nav class="flex items-center gap-2">
-          <button
-            on:click={() => handleNavigation('/')}
-            class="px-4 py-2 text-[#294221] hover:text-[#891515] font-medium transition-colors rounded-lg hover:bg-[#C6B173]/10 whitespace-nowrap"
-          >
-            {$translate('navigation.home')}
-          </button>
+          {#if !isInGame}
+            <button
+              on:click={() => handleNavigation('/')}
+              class="px-4 py-2 text-[#294221] hover:text-[#891515] font-medium transition-colors rounded-lg hover:bg-[#C6B173]/10 whitespace-nowrap"
+            >
+              {$translate('navigation.home')}
+            </button>
+          {/if}
           <button
             on:click={() => handleNavigation('/rules')}
             class="px-4 py-2 text-[#294221] hover:text-[#891515] font-medium transition-colors rounded-lg hover:bg-[#C6B173]/10 whitespace-nowrap"
@@ -169,15 +177,19 @@
           </button>
         </nav>
         
-        <!-- Play Button -->
+        <!-- Play/Home Button -->
         <Button
           variant="primary"
           size="md"
           on:click={handlePlayGame}
           class="font-bold shadow-lg hover:shadow-xl transition-shadow whitespace-nowrap"
         >
-          <span class="mr-2">▶</span>
-          {$translate('navigation.play')}
+          {#if isInGame}
+            {$translate('common.home')}
+          {:else}
+            <span class="mr-2">▶</span>
+            {$translate('navigation.play')}
+          {/if}
         </Button>
         
         <!-- Language Switcher -->
@@ -186,15 +198,19 @@
       
       <!-- Mobile Actions -->
       <div class="flex md:hidden items-center gap-2">
-        <!-- Play Button (Mobile) -->
+        <!-- Play/Home Button (Mobile) -->
         <Button
           variant="primary"
           size="sm"
           on:click={handlePlayGame}
           class="font-bold shadow-md hover:shadow-lg transition-shadow text-sm px-3 py-2"
         >
-          <span class="mr-1">▶</span>
-          {$translate('navigation.play')}
+          {#if isInGame}
+            {$translate('common.home')}
+          {:else}
+            <span class="mr-1">▶</span>
+            {$translate('navigation.play')}
+          {/if}
         </Button>
         
         <!-- Hamburger Menu Button -->
@@ -226,12 +242,14 @@
         class="md:hidden mt-4 pt-4 border-t border-[#C6B173]/20 pb-2 bg-[#fff9f2] relative z-[50]"
       >
         <div class="flex flex-col gap-2">
-          <button
-            on:click={() => handleMobileNavigation('/')}
-            class="px-4 py-3 text-left text-[#294221] hover:text-[#891515] font-medium transition-colors rounded-lg hover:bg-[#C6B173]/10"
-          >
-            {$translate('navigation.home')}
-          </button>
+          {#if !isInGame}
+            <button
+              on:click={() => handleMobileNavigation('/')}
+              class="px-4 py-3 text-left text-[#294221] hover:text-[#891515] font-medium transition-colors rounded-lg hover:bg-[#C6B173]/10"
+            >
+              {$translate('navigation.home')}
+            </button>
+          {/if}
           <button
             on:click={() => handleMobileNavigation('/rules')}
             class="px-4 py-3 text-left text-[#294221] hover:text-[#891515] font-medium transition-colors rounded-lg hover:bg-[#C6B173]/10"
