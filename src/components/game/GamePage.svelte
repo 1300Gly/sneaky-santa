@@ -12,6 +12,9 @@
   import DigitalDice from './DigitalDice.svelte';
   import MobileGameLayout from './MobileGameLayout.svelte';
   import SavedCardRedemptionModal from './SavedCardRedemptionModal.svelte';
+  import CardRevealModal from './CardRevealModal.svelte';
+  import TimerWarningModal from '../ui/TimerWarningModal.svelte';
+  import RoundOverModal from './RoundOverModal.svelte';
   import Countdown from '../ui/Countdown.svelte';
   import Button from '../ui/Button.svelte';
   import Modal from '../ui/Modal.svelte';
@@ -24,6 +27,7 @@
   $: currentRound = $gameState.currentRound;
   $: ruleMode = $gameState.ruleMode;
   $: playersWithSavedCards = $cardDeck.players.filter(p => p.savedCards.length > 0);
+  $: currentCard = $cardDeck.currentCard;
   let showSkipRoundModal = false;
   let showHomeModal = false;
   let showSavedCardRedemptionModal = false;
@@ -33,6 +37,18 @@
   let timerKey = 0;
   // Independent countdown state - not tied to roundStatus
   let showCountdown = false;
+  // Card modal state for desktop
+  let showCardModal = false;
+  // Timer warning modal state
+  let showTimerWarning = false;
+  let timerWarningMessage = '';
+  let timerWarningTimeRemaining = 0;
+  // Timer round over modal state
+  let showRoundOverModal = false;
+  // Timer reset confirmation modal state
+  let showTimerResetConfirm = false;
+  let isTimerResetConfirmVisible = false;
+  let isTimerResetConfirmAnimating = false;
   
   // Track round changes for Timer fade-out/fade-in transition
   $: if (roundStatus === 'playing' || roundStatus === 'paused') {
@@ -145,6 +161,83 @@
     // This callback can be used for any additional logic if needed
   }
   
+  function handlePickCard() {
+    // CardPicker has already drawn the card, just show the modal
+    showCardModal = true;
+  }
+  
+  function handleCloseCardModal() {
+    // Automatically discard the card (it's already in the drawn array)
+    // Note: Save cards are handled within the modal itself
+    if (currentCard && !currentCard.isSaveCard) {
+      cardDeck.clearCurrentCard();
+    }
+    showCardModal = false;
+  }
+  
+  function handleTimerWarning(message: string, timeRemaining: number) {
+    timerWarningMessage = message;
+    timerWarningTimeRemaining = timeRemaining;
+    showTimerWarning = true;
+  }
+  
+  function handleCloseTimerWarning() {
+    showTimerWarning = false;
+  }
+  
+  function handleRoundOverShow() {
+    showRoundOverModal = true;
+  }
+  
+  function handleRoundOverNextRound() {
+    showRoundOverModal = false;
+    if (currentRound < 3) {
+      gameState.updateRound((currentRound + 1) as 1 | 2 | 3);
+      gameState.updateRoundStatus('explanation');
+    } else {
+      // Last round - go back to home
+      gameState.updateRoundStatus('finished');
+      window.location.href = '/';
+    }
+    // Reset timer
+    import('../../stores/timer').then(({ timer }) => {
+      timer.resetTimer();
+    });
+  }
+  
+  function handleRoundOverClose() {
+    // Modal can't be closed, but this is here for consistency
+    handleRoundOverNextRound();
+  }
+  
+  function handleTimerResetConfirm() {
+    showTimerResetConfirm = true;
+    setTimeout(() => {
+      isTimerResetConfirmVisible = true;
+    }, 10);
+  }
+  
+  function confirmTimerReset() {
+    isTimerResetConfirmVisible = false;
+    isTimerResetConfirmAnimating = true;
+    setTimeout(() => {
+      import('../../stores/timer').then(({ timer }) => {
+        timer.resetTimer();
+      });
+      showTimerResetConfirm = false;
+      isTimerResetConfirmAnimating = false;
+    }, 300);
+  }
+  
+  function cancelTimerReset() {
+    isTimerResetConfirmVisible = false;
+    isTimerResetConfirmAnimating = true;
+    setTimeout(() => {
+      showTimerResetConfirm = false;
+      isTimerResetConfirmAnimating = false;
+    }, 300);
+  }
+  
   function handleCountdownComplete() {
     // Immediately change game state so game UI can start animating
     gameState.updateRoundStatus('playing');
@@ -199,7 +292,10 @@
             <div class="bg-white rounded-xl shadow-lg overflow-hidden opacity-0 -translate-y-5 animate-slide-in" style="animation-delay: 100ms; animation-duration: 0.6s; animation-fill-mode: forwards;">
               <!-- Header with Round Number and Indicators -->
               <div class="bg-[#891515] px-6 py-4 flex items-center justify-between">
-                <h2 class="text-3xl font-bold text-white font-['Poppins']">{$translate('rounds.round')} {currentRound}</h2>
+                <div>
+                  <h2 class="text-3xl font-bold text-white font-['Poppins']">{$translate('rounds.round')} {currentRound}</h2>
+                  <p class="text-sm text-white/80 font-['Open Sans'] mt-1">{$translate(`setup.${ruleMode}`)}</p>
+                </div>
                 <div class="flex gap-2">
                   {#each [1, 2, 3] as round, i}
                     <div
@@ -221,7 +317,7 @@
                   <DiceRules />
                 </div>
                 <div class="opacity-0 -translate-y-5 animate-slide-in" style="animation-delay: 400ms; animation-duration: 0.6s; animation-fill-mode: forwards;">
-                  <CardPicker />
+                  <CardPicker onPickCard={handlePickCard} />
                 </div>
               </div>
             </div>
@@ -232,9 +328,14 @@
             <!-- Timer with fade-out/fade-in transition -->
             {#key `timer-${timerKey}-${currentRound}`}
               <div class={isTimerFadingOut ? 'animate-fade-out' : 'opacity-0 -translate-y-5 animate-slide-in'} style={isTimerFadingOut ? 'animation-duration: 0.3s; animation-fill-mode: forwards;' : 'animation-delay: 150ms; animation-duration: 0.6s; animation-fill-mode: forwards;'}>
-                <Timer onRoundOver={() => {
-                  // Timer component will handle showing the modal
-                }} />
+                <Timer 
+                  onRoundOver={() => {
+                    // Timer component will handle showing the modal
+                  }}
+                  onWarning={handleTimerWarning}
+                  onRoundOverShow={handleRoundOverShow}
+                  onResetConfirm={handleTimerResetConfirm}
+                />
               </div>
             {/key}
             
@@ -269,27 +370,27 @@
             {/if}
             
             <!-- Navigation Buttons -->
-            <div class="bg-white rounded-xl p-4 space-y-3 opacity-0 -translate-y-5 animate-slide-in" style="animation-delay: 600ms; animation-duration: 0.6s; animation-fill-mode: forwards;">
+            <div class="bg-white rounded-xl shadow-lg p-4 flex gap-3 opacity-0 -translate-y-5 animate-slide-in" style="animation-delay: 600ms; animation-duration: 0.6s; animation-fill-mode: forwards;">
               {#if currentRound < 3}
-                <div class="w-full">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    on:click={handleSkipRound}
-                  >
-                    {$translate('game.skipToNextRound')}
-                  </Button>
-                </div>
-              {/if}
-              <div class="w-full">
+                {@const roundSettings = $gameState.roundSettings[`round${currentRound}` as 'round1' | 'round2' | 'round3']}
+                {@const hasTimeLimit = roundSettings.timeLimitEnabled && roundSettings.timeLimit > 0}
                 <Button
                   variant="secondary"
                   size="sm"
-                  on:click={handleGoHome}
+                  on:click={handleSkipRound}
+                  class="flex-1"
                 >
-                  {$translate('common.home')}
+                  {hasTimeLimit ? $translate('game.skipToNextRound') : $translate('game.nextRound')}
                 </Button>
-              </div>
+              {/if}
+              <Button
+                variant="secondary"
+                size="sm"
+                on:click={handleGoHome}
+                class="flex-1"
+              >
+                {$translate('common.home')}
+              </Button>
             </div>
             
             <!-- Digital Dice -->
@@ -377,5 +478,61 @@
     startValue={3}
     onComplete={handleCountdownComplete}
   />
+{/if}
+
+<!-- Card Reveal Modal - Rendered at top level to avoid overflow issues -->
+{#if showCardModal && currentCard}
+  <CardRevealModal
+    card={currentCard}
+    isOpen={showCardModal}
+    onClose={handleCloseCardModal}
+  />
+{/if}
+
+<!-- Timer Warning Modal - Rendered at top level to avoid overflow issues -->
+{#if showTimerWarning}
+  <TimerWarningModal
+    message={timerWarningMessage}
+    timeRemaining={timerWarningTimeRemaining}
+    onClose={handleCloseTimerWarning}
+    autoDismiss={true}
+    dismissDelay={4000}
+  />
+{/if}
+
+<!-- Round Over Modal - Rendered at top level to avoid overflow issues -->
+{#if showRoundOverModal}
+  <RoundOverModal
+    isOpen={showRoundOverModal}
+    currentRound={currentRound}
+    onNextRound={handleRoundOverNextRound}
+    onClose={handleRoundOverClose}
+  />
+{/if}
+
+<!-- Timer Reset Confirmation Modal - Rendered at top level to avoid overflow issues -->
+{#if showTimerResetConfirm || isTimerResetConfirmAnimating}
+  <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 modal-backdrop" class:backdrop-enter={isTimerResetConfirmVisible} class:backdrop-exit={!isTimerResetConfirmVisible && isTimerResetConfirmAnimating} style="position: fixed;">
+    <div class="card max-w-md w-full mx-4 modal-spring" class:modal-enter={isTimerResetConfirmVisible} class:modal-exit={!isTimerResetConfirmVisible && isTimerResetConfirmAnimating}>
+      <h3 class="text-2xl font-bold mb-4 text-[#294221]">{$translate('timer.resetConfirm')}</h3>
+      <p class="text-[#294221] font-open-sans mb-4">
+        {$translate('timer.resetConfirmMessage')}
+      </p>
+      <div class="flex gap-4 justify-end">
+        <button
+          on:click={cancelTimerReset}
+          class="px-6 py-3 bg-[#385025] text-white rounded-xl font-semibold hover:bg-[#294221] transition-colors border-2 border-[#385025] shadow-md"
+        >
+          {$translate('common.cancel')}
+        </button>
+        <button
+          on:click={confirmTimerReset}
+          class="px-6 py-3 bg-[#891515] text-white rounded-xl font-semibold hover:bg-[#B42D1A] transition-colors border-2 border-[#891515] shadow-md"
+        >
+          {$translate('common.confirm')}
+        </button>
+      </div>
+    </div>
+  </div>
 {/if}
 
